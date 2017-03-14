@@ -12,7 +12,8 @@ gulp.task('serve', ['sass'], function() {
 
     browserSync.init({
         server: "..",
-        notify: false
+        notify: false,
+        cors: true
     });
 
     gulp.watch(path + "/assets/scss/*.scss", ['sass']);
