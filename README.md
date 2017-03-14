@@ -1,6 +1,6 @@
 # oloscreen
 
 ## Usage
-* `cd gulp`
-* `npm install`
-* `gulp`
+1. `cd gulp`
+2. `npm install`
+3. `gulp`
