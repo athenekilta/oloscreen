@@ -8,18 +8,36 @@ $('.dayname').html(today);
 
 
 //Ruokalista
-response = $.getJSON("http://www.amica.fi/modules/json/json/Index?costNumber=0199&language=fi", function(data){
-    for (var i = 0; i < data.MenusForDays[0].SetMenus.length; i++) {
-        var html = "<p>" + "<strong>" + data.MenusForDays[0].SetMenus[i].Name + "</strong>"+ "</br>" + data.MenusForDays[0].SetMenus[i].Components[0] + "</p>" ;
-        $('#herehere').append(html);
+//Amica
+var amicaURL = 'http://www.amica.fi/modules/json/json/Index?costNumber=0199&language=fi';
+$.getJSON(amicaURL, function(data){
+
+	var table = data.MenusForDays[0].SetMenus;
+	var asString = ' ';
+	var salaattibuffa = ' ';
+
+    for (var i = 0; i < table.length; i++) {
+    	var foodtype = table[i].Name;
+    	if (foodtype == 'SALAATTIBUFFET MM.') {
+    		for (var j = 0; j < table[i].Components.length; j++) {
+    			salaattibuffa += table[i].Components[j] + "<br>";
+    		};
+    	} else {
+        	asString += table[i].Components[0] + "<br>";
+   		};
     };
+    var tuas = "<p>" + asString + "</p>";
+    var salaatti = "<p>" + salaattibuffa + "</p>";
+	$('#TUAS').html(tuas);
+	$('#SALAATTI').html(salaatti);
+
 });
 
 //Sodexo
 var timestamp = moment().format('YYYY/MM/DD');
-var jsonURL = 'http://www.sodexo.fi/ruokalistat/output/daily_json/142/' + timestamp + '/fi'
+var sodexoURL = 'http://www.sodexo.fi/ruokalistat/output/daily_json/142/' + timestamp + '/fi'
 
-$.getJSON(jsonURL, function(data){
+$.getJSON(sodexoURL, function(data){
 
  var table = data.courses;
  var asString = ' ';
