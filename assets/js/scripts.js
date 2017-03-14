@@ -1,5 +1,9 @@
 $(document).ready(function() {
-
+var data;
+  response = $.getJSON("http://www.amica.fi/modules/json/json/Index?costNumber=0199&language=fi", function(data){
+		var funkka = function(){$('#TUAS').html(data.RestaurantName)};
+    funkka();
+});
 
 //Päivämäärä
 moment.locale('fi');
@@ -13,8 +17,6 @@ $('.dayname').html(today);
 //Sodexo
 var timestamp = moment().format('YYYY/MM/DD');
 var jsonURL = 'http://www.sodexo.fi/ruokalistat/output/daily_json/142/' + timestamp + '/fi'
-
-var json = jsonURL.get(JSON)
 
 console.log(jsonURL);
 
