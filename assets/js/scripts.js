@@ -10,11 +10,7 @@ $('.dayname').html(today);
 //Ruokalista
 response = $.getJSON("http://www.amica.fi/modules/json/json/Index?costNumber=0199&language=fi", function(data){
     for (var i = 0; i < data.MenusForDays[0].SetMenus.length; i++) {
-      var osahtml = ""
-      for (var j = 0; j < data.MenusForDays[0].SetMenus[i].Components.length; j++) {
-        osahtml += data.MenusForDays[0].SetMenus[i].Components[j] + "</br>"
-      }
-        var html = "<p>" + osahtml + "</p>";
+        var html = "<p>" + "<strong>" + data.MenusForDays[0].SetMenus[i].Name + "</strong>"+ "</br>" + data.MenusForDays[0].SetMenus[i].Components[0] + "</p>" ;
         $('#herehere').append(html);
     };
 });
@@ -32,9 +28,9 @@ $.getJSON(jsonURL, function(data){
   asString += table[i].title_fi + " " + table[i].properties + "<br>"
  };
 
- var subi = table[table.length - 1].title_fi;
-
- $('#SODEXO').html(asString);
+ var subi = "<p>" + table[table.length - 1].title_fi + "</p>";
+ var ttalo = "<p>" + asString + "</p>";
+ $('#SODEXO').html(ttalo);
  $('#SUBWAY').html(subi);
 });
 });

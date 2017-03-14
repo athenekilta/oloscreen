@@ -1,9 +1,19 @@
-$bg-color: #ffffff;
-$font-color: #000000;
+$bg-color: #79b654;
+$font-color: #ffffff;
 
 body {
 background-color: $bg-color;
+font-family: 'Open Sans', sans-serif;
+color: $font-color;
   h1{
-    color: $font-color;
+    display: flex;
+    justify-content: center;
+  }
+  h2{
+    font-weight: bold;
+  }
+  p{
+    font-size: 2em;
+    margin-bottom: 20px;
   }
 }

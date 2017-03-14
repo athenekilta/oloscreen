@@ -7,30 +7,34 @@
     <title></title>
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/main.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 <body>
     <script src="assets/js/vendors/jquery-1.11.3.min.js"></script>
     <script src="assets/js/vendors/bootstrap.min.js"></script>
     <script src="assets/js/scripts.js"></script>
     <script src="assets/js/moment-with-locales.js"></script>
+    <div class="container">
     <div class="row">
     	<h1>Tänään on <span class="dayname"></span> ja hellurei ja hellät tunteet</h1>
     </div>
-	<div class="row">
-	    <div class="col-md-4">
-	    <h2>Päivän ruokalista</h2>
-      <h3>T-talo</h2>
-      <div id="SODEXO"></div>
-      <div id="SUBWAY"></div>
-      <h3>TUAS</h2>
-      <div id="herehere"></div>
-	    </div>
+      <div class="ruokala col-md-6">
+        <h2>T-talo</h2>
+        <div id="SODEXO"></div>
+        <div id="SUBWAY"></div>
+      </div>
+      <div class="ruokala col-md-6">
+        <h2>TUAS</h2>
+        <div id="herehere"></div>
+      </div>
+      <!--
 	    <div class="col-md-4">
 	    	<h2>Tulevat tapahtumat</h2>
 	    </div>
 	    <div class="col-md-4">
 	    	<h2>Päivän hassu kuva</h2>
 	    </div>
+      -->
 	</div>
 </body>
 </html>
