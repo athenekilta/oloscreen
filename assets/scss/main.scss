@@ -5,15 +5,14 @@ body {
 background-color: $bg-color;
 font-family: 'Open Sans', sans-serif;
 color: $font-color;
-  .row{
-    display: flex;
-    justify-content: center;
-  }
   h1{
     display: flex;
     justify-content: center;
-    font-size: 3em;
+    font-family: 'Arvo', serif;
+    font-size: 4em;
     color: #fff;
+    margin: 70px 0px;
+    text-transform: uppercase;
   }
   h2{
     font-weight: bold;
@@ -33,8 +32,8 @@ color: $font-color;
     padding: 20px;
     padding-top: 10px;
     margin-bottom: 20px;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
     min-height: 200px;
   }
   #ttalo{
