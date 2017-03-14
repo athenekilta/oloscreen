@@ -26,8 +26,9 @@ $.getJSON(amicaURL, function(data){
         	asString += table[i].Components[0] + "<br>";
    		};
     };
-    var tuas = "<p>" + asString + "</p>";
-    var salaatti = "<p>" + salaattibuffa + "</p>";
+    var tuas = ("<p>" + asString + "</p>").replace(/\* ,/g, '').replace(/ ,/g, ', ');
+    var salaatti = ("<p>" + salaattibuffa + "</p>").replace(/\* ,/g, '').replace(/ ,/g, ', ');
+
 	$('#TUAS').html(tuas);
 	$('#SALAATTI').html(salaatti);
 
@@ -39,16 +40,16 @@ var sodexoURL = 'http://www.sodexo.fi/ruokalistat/output/daily_json/142/' + time
 
 $.getJSON(sodexoURL, function(data){
 
- var table = data.courses;
- var asString = ' ';
+	var table = data.courses;
+	var asString = ' ';
 
- for (var i = 0; i < table.length - 1; i++) {
-  asString += table[i].title_fi + " " + table[i].properties + "<br>"
- };
+	for (var i = 0; i < table.length - 1; i++) {
+		asString += table[i].title_fi + " (" + table[i].properties + ")<br>"
+	};
 
- var subi = "<p>" + table[table.length - 1].title_fi + "</p>";
- var ttalo = "<p>" + asString + "</p>";
- $('#SODEXO').html(ttalo);
- $('#SUBWAY').html(subi);
+	var subi = "<p> " + table[table.length - 1].title_fi + "</p>";
+	var ttalo = "<p>" + asString + "</p>";
+	$('#SODEXO').html(ttalo);
+	$('#SUBWAY').html(subi);
 });
 });
