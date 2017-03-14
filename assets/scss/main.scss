@@ -1,19 +1,43 @@
 $bg-color: #79b654;
-$font-color: #ffffff;
+$font-color: #000;
 
 body {
 background-color: $bg-color;
 font-family: 'Open Sans', sans-serif;
 color: $font-color;
-  h1{
+  .row{
     display: flex;
     justify-content: center;
   }
+  h1{
+    display: flex;
+    justify-content: center;
+    font-size: 3em;
+    color: #fff;
+  }
   h2{
     font-weight: bold;
+    font-size: 3em;
+    color: #fff;
+    background-color: $bg-color;
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
   p{
-    font-size: 2em;
+    font-size: 2.5em;
     margin-bottom: 20px;
+  }
+  .ruokala{
+    text-align: center;
+    background-color: #f5f5f5;
+    padding: 20px;
+    padding-top: 10px;
+    margin-bottom: 20px;
+    min-height: 200px;
+  }
+  #ttalo{
+    p{
+      font-size: 4em;
+    }
   }
 }
