@@ -47,7 +47,7 @@ $.getJSON(sodexoURL, function(data){
 		asString += table[i].title_fi + " (" + table[i].properties + ")<br>"
 	};
 
-	var subi = "<p> " + table[table.length - 1].title_fi + "</p>";
+	var subi = ("<p> " + table[table.length - 1].title_fi + "</p>").replace('Subway', 'Päivän subi');
 	var ttalo = "<p>" + asString + "</p>";
 	$('#SODEXO').html(ttalo);
 	$('#SUBWAY').html(subi);
