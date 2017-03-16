@@ -4,7 +4,7 @@ $(document).ready(function() {
 moment.locale('fi');
 
 window.setInterval(function() {
-	var today = moment().format('[Tänään on ]dddd l [ ja kello on vähintään ]LTS');
+	var today = moment().format('[Tänään on ]dddd l [ ja kello on vähintään ]LT');
 	$('.dayname').html(today);
 }, 500);
 
