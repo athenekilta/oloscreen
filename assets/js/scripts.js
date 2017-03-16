@@ -14,7 +14,7 @@ window.setInterval(function() {
 
 
 var ruokalistat =	function() {
-	var amicaURL = 'http://www.amica.fi/modules/json/json/Index?costNumber=0199&language=fi';
+	var amicaURL = 'https://www.amica.fi/modules/json/json/Index?costNumber=0199&language=fi';
 	$.getJSON(amicaURL, function(data){
 
 		var table = data.MenusForDays[0].SetMenus;
@@ -41,7 +41,7 @@ var ruokalistat =	function() {
 
 	//Sodexo
 	var timestamp = moment().format('YYYY/MM/DD');
-	var sodexoURL = 'http://www.sodexo.fi/ruokalistat/output/daily_json/142/' + timestamp + '/fi'
+	var sodexoURL = 'https://www.sodexo.fi/ruokalistat/output/daily_json/142/' + timestamp + '/fi'
 
 	$.getJSON(sodexoURL, function(data){
 
