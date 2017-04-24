@@ -1,0 +1,46 @@
+$bg-color: #79b654;
+$font-color: #000;
+
+body {
+background-color: $bg-color;
+font-family: 'Open Sans', sans-serif;
+color: $font-color;
+  h1{
+    display: flex;
+    justify-content: center;
+    font-family: 'Arvo', serif;
+    font-size: 3.5em;
+    color: #fff;
+    margin: 70px 0px;
+    text-transform: uppercase;
+  }
+  h2{
+    font-weight: bold;
+    font-size: 3em;
+    font-family: 'Arvo', serif;
+    letter-spacing: 0.05em;
+    color: #fff;
+    background-color: $bg-color;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  p{
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  .ruokala{
+    text-align: center;
+    background-color: #f5f5f5;
+    padding: 20px;
+    padding-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    min-height: 200px;
+  }
+  #ttalo{
+    p{
+      font-size: 4em;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "oloscreen-bundler",
+  "version": "0.0.1",
+  "description": "Infoscreen for the guild room of Athene. Contains bus lunch menu, events and picture of the day.",
+  "main": "index.js",
+  "scripts": {
+    "start": "./node_modules/.bin/webpack -p --progress",
+    "test": "echo \"No tests, don't wanna make && exit 1\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/athenekilta/oloscreen.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/athenekilta/oloscreen/issues"
+  },
+  "homepage": "https://github.com/athenekilta/oloscreen#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-env": "^1.4.0",
+    "css-loader": "^0.28.0",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "node-sass": "^4.5.2",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.16.1",
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.4"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "moment": "^2.18.1"
+  }
+}
