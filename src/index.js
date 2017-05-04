@@ -8,8 +8,10 @@ $(document).ready(function() {
 moment.locale('');
 
 window.setInterval(function() {
-	var today = moment().format('[Tänään on ]DD.MM.YYYY[ ja kello on vähintään ] LT');
-	$('.dayname').html(today);
+	const today = moment().format('[PVM ]DD.MM');
+	const time = moment().format('[KLO ]LT');
+	$('.currentDate').html(today);
+	$('.currentTime').html(time);
 }, 500);
 
 
@@ -24,17 +26,16 @@ const ruokalistat = () => {
 		const table = data.MenusForDays[0].SetMenus;
 		const resObject = {
 			salaatti: null,
-			tuas: null,
+			tuas: [],
 		}
 		table.forEach(row => {
 			if (row.Name === 'SALAATTIBUFFET MM.') {
 				resObject.salaatti = row.Components.join('<br>');
 			} else {
-				resObject.tuas = row.Components[0].toString();
+				resObject.tuas.push(row.Components.join('<br>').concat('<br>'));
 			}
 		});
-
-		const tuas = ("<p>" + resObject.tuas + "</p>").replace(/\* ,/g, '').replace(/ ,/g, ', ');
+		const tuas = ("<p>" + resObject.tuas.join('') + "</p>").replace(/\* ,/g, '').replace(/ ,/g, ', ');
 	  const salaatti = ("<p>" + resObject.salaatti + "</p>").replace(/\* ,/g, '').replace(/ ,/g, ', ');
 
 		$('#TUAS').html(tuas);
@@ -47,8 +48,10 @@ const ruokalistat = () => {
 
 	$.getJSON(sodexoURL, (data) => {
 		const table = data.courses;
+		console.log(table);
 		const fixedSodexo = table.map(a => {
-			return `${a.title_fi} (${a.properties})<br>`;
+			const blaa = a.properties ? `(${a.properties})` : '';
+			return `${a.title_fi} ${blaa}<br>`;
 		});
 
 		const subi = ("<p> " + table[table.length - 1].title_fi + "</p>").replace('Subway', 'Päivän subi');

@@ -7,3 +7,4 @@ Install webpack-dev-server globally also webpack
 1. `npm install`
 2. `webpack`
 3. `webpack-dev-server`
+4. `Download Cors plugin to chrome`

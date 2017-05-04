@@ -14,8 +14,17 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="assets/js/bundle.js"></script>
-    <div class="row">
-    	<h1 class="dayname"></h1>
+    <div class="container-full" >
+    <div class="row" id="headerRow">
+      <div class="col-xs-2 container" id="dateAndTime">
+         <div class="row">
+             <h2 class="currentTime" />
+         </div>
+         <div class="row">
+             <h2 class="currentDate" />
+         </div>
+     </div>
+     <img src="assets/images/futuriceBlackWhite.png" alt="Futurice logo" id="futuriceLogo">
     </div>
 	<div class="row">
 		<div class="col-xs-6 container">
@@ -39,5 +48,6 @@
         </div>
       </div>
 	</div>
+  </div>
 </body>
 </html>

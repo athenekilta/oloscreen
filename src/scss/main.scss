@@ -1,10 +1,38 @@
-$bg-color: #79b654;
+$bg-color: black;
 $font-color: #000;
 
 body {
-background-color: $bg-color;
-font-family: 'Open Sans', sans-serif;
-color: $font-color;
+  background-color: $bg-color;
+  font-family: 'Open Sans', sans-serif;
+  color: $font-color;
+
+  .container-full {
+    width: 1890px;
+    height: 1080px;
+  }
+
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  #headerRow{
+    padding-bottom: 10px;
+  }
+
+  #dateAndTime{
+    padding-left: 30px;
+  }
+  #futuriceLogo{
+    height: 100px;
+    margin-top: 20px;
+    float: right;
+    padding-right: 30px;
+  }
+  .currentDate{
+    margin-top: auto;
+  }
+
   h1{
     display: flex;
     justify-content: center;
@@ -15,14 +43,11 @@ color: $font-color;
     text-transform: uppercase;
   }
   h2{
-    font-weight: bold;
     font-size: 3em;
     font-family: 'Arvo', serif;
     letter-spacing: 0.05em;
     color: #fff;
     background-color: $bg-color;
-    padding-top: 15px;
-    padding-bottom: 15px;
   }
   p{
     font-size: 2.5em;
