@@ -56,6 +56,7 @@ const ruokalistat = () => {
 
 		const subi = ("<p> " + table[table.length - 1].title_fi + "</p>").replace('Subway', 'Päivän subi');
 		const ttalo = "<p>" + fixedSodexo.join('') + "</p>";
+		const daysToWabbu =
 		$('#SODEXO').html(ttalo);
 		$('#SUBWAY').html(subi);
 	});
