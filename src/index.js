@@ -2,14 +2,14 @@ import moment from 'moment';
 import fi from 'moment/locale/fi'
 import $ from 'jquery';
 
-$(document).ready(function() {
+$(document).ready(() => {
 
 //Päivämäärä
 moment.locale('');
 
-window.setInterval(function() {
-	const today = moment().format('[PVM ]DD.MM');
-	const time = moment().format('[KLO ]LT');
+window.setInterval(() => {
+	const today = moment().format('[PVM ]DD.MM.YY');
+	const time = moment().format('[KLO ]HH.mm.ss');
 	$('.currentDate').html(today);
 	$('.currentTime').html(time);
 }, 500);
@@ -48,22 +48,21 @@ const ruokalistat = () => {
 
 	$.getJSON(sodexoURL, (data) => {
 		const table = data.courses;
-		console.log(table);
 		const fixedSodexo = table.map(a => {
-			const blaa = a.properties ? `(${a.properties})` : '';
-			return `${a.title_fi} ${blaa}<br>`;
+			const values = a.properties ? `(${a.properties})` : '';
+			return `${a.title_fi} ${values}<br>`;
 		});
+		fixedSodexo.splice(-1,1); // delete subway
 
 		const subi = ("<p> " + table[table.length - 1].title_fi + "</p>").replace('Subway', 'Päivän subi');
 		const ttalo = "<p>" + fixedSodexo.join('') + "</p>";
-		const daysToWabbu =
 		$('#SODEXO').html(ttalo);
 		$('#SUBWAY').html(subi);
 	});
 };
 
 
-window.setInterval(function(){
+window.setInterval(() => {
 	ruokalistat();
 }, 18000000);
 ruokalistat();
