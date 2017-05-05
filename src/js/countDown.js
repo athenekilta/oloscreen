@@ -1,26 +1,15 @@
-/*
-window.setInterval(() => {
-  const end = moment("2018-5-1 00:00:01"); // another date
-  const duration = end.toNow();
-  const forWeb = duration.format(string);
-  console.log(forWeb);
-}, 1000)
-
-const end = moment("2018-5-1 00:00:01"); // another date
-const duration = end.toNow();
-const forWeb = duration.format(string);
-console.log(forWeb);
-*/
 const eventArray = [
   {
+    eventName: 'Wappu',
     date : 'May 1, 2018 00:00:01',
-    label: ' ULLIKSELLE',
-    text: 'WAPPUUU!!!',
+    textEnding: ' ULLIKSELLE',
+    expiredText: 'WAPPUUU!!!',
   },
   {
+    eventName: 'Marathon',
     date : 'Oct 19, 2018 00:00:01',
-    label: ' bussiin',
-    text: 'Bussi kulkee!',
+    textEnding: ' bussiin',
+    expiredText: 'Bussi kulkee!',
   },
 ];
 
@@ -34,11 +23,11 @@ const x = setInterval(() => {
   const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  document.getElementById("eventHeader").innerHTML = `AIKAA ${eventArray[0].label}`;
+  document.getElementById("eventHeader").innerHTML = `AIKAA ${eventArray[0].textEnding}`;
   document.getElementById("eventTime").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("EVENT").innerHTML = "WAPPUUUU!!!";
+    document.getElementById("EVENT").innerHTML = `${eventArray[0].expiredText}`;
   }
 }, 1000);

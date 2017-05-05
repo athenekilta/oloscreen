@@ -1,4 +1,5 @@
 import moment from 'moment';
+import './countDown.js'
 import fi from 'moment/locale/fi'
 import $ from 'jquery';
 
