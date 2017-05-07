@@ -1,81 +1,107 @@
-$bg-color: #349D4A;
-$font-color: #000;
+$bg-color: #000;
+$font-color: #fff;
+
+/*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */button,hr,input{overflow:visible}audio,canvas,progress,video{display:inline-block}progress,sub,sup{vertical-align:baseline}[type=checkbox],[type=radio],legend{box-sizing:border-box;padding:0}html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:ButtonText dotted 1px}fieldset{padding:.35em .75em .625em}legend{color:inherit;display:table;max-width:100%;white-space:normal}textarea{overflow:auto}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}[hidden],template{display:none}
 
 body {
   background-color: $bg-color;
-  font-family: 'Open Sans', sans-serif;
+  font: 400 30px/1.5 'Open Sans', sans-serif;
   color: $font-color;
+  width: 1920px;
+  height: 1080px;
+  padding: 10px 15px;
+  box-sizing: border-box;
 
-  .container-full {
-    width: 1920px;
-    height: 1080px;
+  #header {
+    margin-top: 20px;
+
+    #logo {
+      height: 100px;
+      float: left;
+      margin-bottom: 50px;
+    }
+
+    #date {
+      margin: 0 0 0 20px;
+      line-height: 100px;
+      font-size: 55px;
+      color: #fff;
+      font-weight: 400;
+      float: left;
+    }
+
+    #futurice {
+      height: 100px;
+      float: right;
+    }
   }
 
-  .row {
-    margin-left: 0;
-    margin-right: 0;
-  }
   #eventTime{
     font-size: 90px;
     font-weight: 100;
-
-  }
-  #headerRow{
-    padding-bottom: 10px;
-  }
-  #dateAndTime{
-    padding-left: 30px;
-  }
-  #atheneLogo{
-    height: 100px;
-    margin-top: 20px;
-    float: left;
-    padding-left: 30px;
-
-  }
-  #futuriceLogo{
-    height: 100px;
-    margin-top: 20px;
-    float: right;
-    padding-right: 30px;
-  }
-  .currentDate{
-    margin-top: auto;
   }
 
-  h1{
+  main {
+    border-top: 1px solid #fff;
+    clear: both;
     display: flex;
-    justify-content: center;
-    font-family: 'Arvo', serif;
-    font-size: 3.5em;
-    color: #fff;
-    margin: 70px 0px;
-    text-transform: uppercase;
-  }
-  h2{
-    font-size: 3em;
-    font-family: 'Arvo', serif;
-    letter-spacing: 0.05em;
-    color: #fff;
-    background-color: $bg-color;
-  }
-  p{
-    font-size: 2.5em;
-    margin-bottom: 20px;
-  }
-  .ruokala{
-    text-align: center;
-    background-color: #f5f5f5;
-    padding: 20px;
-    padding-top: 10px;
-    margin-bottom: 15px;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
 
-  #ttalo{
-    p{
-      font-size: 4em;
+    .column {
+      flex: 1;
+
+      &:nth-child(1) { margin-right: 15px; }
+      &:nth-child(2) { margin-left: 15px; }
+    }
+
+    h2 {
+      text-transform: uppercase;
+      margin: 1em 0 0;
+      letter-spacing: 2px;
+    }
+
+    .block {
+      background: #fff;
+      color: #000;
+      padding: 10px 15px;
+
+      h3 {
+        margin-bottom: 0;
+        font-size: 30px;
+        text-transform: uppercase;
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+
+    #eventTime {
+      span {
+        background: #349D4A;
+        color: #fff;
+        min-width: 1.5em;
+        display: inline-block;
+        text-align: center;
+        padding: 0 30px;
+        box-sizing: border-box;
+        font-family: 'Courier';
+        position: relative;
+        top: 50px;
+
+        &:before {
+          font-family: 'Open Sans';
+          content: 'Päivää';
+          text-transform: uppercase;
+          position: absolute;
+          top: -40px;
+          left: 0;
+          font-size: 25px;
+        }
+
+        &:nth-child(2):before { content: 'Tuntia'; }
+        &:nth-child(3):before { content: 'Minuuttia'; }
+        &:nth-child(4):before { content: 'Sekuntia'; }
+      }
     }
   }
 }

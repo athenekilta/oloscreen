@@ -1,58 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/css/main.bundle.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Passion+One" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+  <link href="assets/css/main.bundle.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+
+  <script src="assets/js/bundle.js"></script>
 </head>
 <body>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="assets/js/bundle.js"></script>
-  <div class="container-full" >
-  <div class="row" id="headerRow">
-    <img src="assets/images/athene-logo.png" alt="Athene logo" id="atheneLogo">
-    <div class="col-xs-3 container" id="dateAndTime">
-     <div class="row">
-        <h2 class="currentTime" />
-     </div>
-     <div class="row">
-        <h2 class="currentDate" />
-     </div>
-   </div>
-   <img src="assets/images/futuriceBlackWhite.png" alt="Futurice logo" id="futuriceLogo">
-  </div>
-	<div class="row">
-		<div class="col-xs-6 container">
-        <div class="ruokala">
-          <h2>TIETOTEKNIIKKA</h2>
-    		  <div id="SODEXO"></div>
+    <header id="header">
+      <img src="assets/images/athene-logo.png" id="logo">
+      <div id="date">
+        <span class="currentDate"></span>
+      </div>
+      <img src="assets/images/futuriceBlackWhite.png" id="futurice">
+    </header>
+
+    <main>
+      <div class="column">
+        <h2>T-talo</h2>
+        <div class="block">
+          <div id="SODEXO"></div>
         </div>
-        <div class="ruokala">
-    		  <h2>SUBWAY</h2>
-    		  <div id="SUBWAY"></div>
+
+        <h2>Subway</h2>
+        <div class="block">
+          <div id="SUBWAY"></div>
         </div>
-        <div class="ruokala">
-          <h2 id="eventHeader"></h2>
-          <div id="eventTime"></div>
-        </div>
-	    </div>
-	    <div class="col-xs-6 container">
-        <div class="ruokala">
-          <h2>TUAS SALAATTIBUFFA</h2>
+
+        <h2 id="eventHeader"></h2>
+        <div id="eventTime"></div>
+      </div>
+
+      <div class="column">
+        <h2>Tuas</h2>
+        <div class="block">
+          <div id="TUAS"></div>
+          <h3>Salaattibuffet</h3>
           <div id="SALAATTI"></div>
         </div>
-        <div class="ruokala">
-          <h2>TUAS MUUT</h2>
-      	   <div id="TUAS"></div>
-        </div>
       </div>
-	</div>
+    </main>
   </div>
 </body>
 </html>
