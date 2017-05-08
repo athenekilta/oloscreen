@@ -75,6 +75,7 @@ body {
     #eventTime {
       span {
         background: $brand;
+        color: #000;
         min-width: 1.5em;
         display: inline-block;
         text-align: center;
@@ -92,6 +93,7 @@ body {
           top: -45px;
           left: 0;
           font-size: 28px;
+          color: #fff;
         }
 
         &:nth-child(2):before { content: 'Tuntia'; }
