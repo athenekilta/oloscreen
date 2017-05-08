@@ -181,8 +181,7 @@ body {
     body main .block p {
       margin: 0; }
     body main #eventTime span {
-      background: #349D4A;
-      color: #fff;
+      background: #8BC34A;
       min-width: 1.5em;
       display: inline-block;
       text-align: center;
