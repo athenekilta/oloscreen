@@ -1,0 +1,207 @@
+@charset "UTF-8";
+/*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
+button, hr, input {
+  overflow: visible; }
+
+audio, canvas, progress, video {
+  display: inline-block; }
+
+progress, sub, sup {
+  vertical-align: baseline; }
+
+[type=checkbox], [type=radio], legend {
+  box-sizing: border-box;
+  padding: 0; }
+
+html {
+  line-height: 1.15;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0; }
+
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section {
+  display: block; }
+
+h1 {
+  font-size: 2em;
+  margin: .67em 0; }
+
+figure {
+  margin: 1em 40px; }
+
+hr {
+  box-sizing: content-box;
+  height: 0; }
+
+code, kbd, pre, samp {
+  font-family: monospace,monospace;
+  font-size: 1em; }
+
+a {
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects; }
+
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted; }
+
+b, strong {
+  font-weight: bolder; }
+
+dfn {
+  font-style: italic; }
+
+mark {
+  background-color: #ff0;
+  color: #000; }
+
+small {
+  font-size: 80%; }
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative; }
+
+sub {
+  bottom: -.25em; }
+
+sup {
+  top: -.5em; }
+
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+img {
+  border-style: none; }
+
+svg:not(:root) {
+  overflow: hidden; }
+
+button, input, optgroup, select, textarea {
+  font-family: sans-serif;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0; }
+
+button, select {
+  text-transform: none; }
+
+[type=reset], [type=submit], button, html [type=button] {
+  -webkit-appearance: button; }
+
+[type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner, button::-moz-focus-inner {
+  border-style: none;
+  padding: 0; }
+
+[type=button]:-moz-focusring, [type=reset]:-moz-focusring, [type=submit]:-moz-focusring, button:-moz-focusring {
+  outline: ButtonText dotted 1px; }
+
+fieldset {
+  padding: .35em .75em .625em; }
+
+legend {
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  white-space: normal; }
+
+textarea {
+  overflow: auto; }
+
+[type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button {
+  height: auto; }
+
+[type=search] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px; }
+
+[type=search]::-webkit-search-cancel-button, [type=search]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit; }
+
+summary {
+  display: list-item; }
+
+[hidden], template {
+  display: none; }
+
+body {
+  background-color: #000;
+  font: 700 34px/1.5 'Open Sans', sans-serif;
+  color: #fff;
+  width: 1920px;
+  height: 1080px;
+  padding: 10px 15px;
+  box-sizing: border-box; }
+  body #header {
+    margin-top: 20px; }
+    body #header #logo {
+      height: 100px;
+      float: left;
+      margin-bottom: 50px; }
+    body #header #date {
+      margin: 0 0 0 20px;
+      line-height: 100px;
+      font-size: 55px;
+      color: #fff;
+      font-weight: 400;
+      float: left; }
+    body #header #futurice {
+      height: 100px;
+      float: right; }
+  body #eventTime {
+    font-size: 90px;
+    font-weight: 100; }
+  body main {
+    clear: both;
+    display: flex; }
+    body main .column {
+      flex: 1; }
+      body main .column:nth-child(1) {
+        margin-right: 15px; }
+      body main .column:nth-child(2) {
+        margin-left: 15px; }
+    body main h2 {
+      text-transform: uppercase;
+      margin: 1em 0 0;
+      letter-spacing: 2px;
+      color: #8BC34A; }
+    body main .block h3 {
+      margin-bottom: 0;
+      font-size: 30px;
+      text-transform: uppercase; }
+    body main .block p {
+      margin: 0; }
+    body main #eventTime span {
+      background: #349D4A;
+      color: #fff;
+      min-width: 1.5em;
+      display: inline-block;
+      text-align: center;
+      padding: 0 30px;
+      box-sizing: border-box;
+      font-family: 'Courier', monospace;
+      position: relative;
+      top: 50px; }
+      body main #eventTime span:before {
+        font-family: 'Open Sans';
+        content: 'P\E4iv\E4\E4';
+        text-transform: uppercase;
+        position: absolute;
+        top: -45px;
+        left: 0;
+        font-size: 28px; }
+      body main #eventTime span:nth-child(2):before {
+        content: 'Tuntia'; }
+      body main #eventTime span:nth-child(3):before {
+        content: 'Minuuttia'; }
+      body main #eventTime span:nth-child(4):before {
+        content: 'Sekuntia'; }
