@@ -1,17 +1,8 @@
-const eventArray = [
-  {
-    date : 'May 1, 2018 00:00:00',
-    title: 'Aikaa wappuun',
-    expiredText: 'WAPPUUU!!!',
-  },
-  {
-    date : 'Oct 19, 2017 00:00:00',
-    title: 'Aikaa marathoniin',
-    expiredText: 'Bussi kulkee!',
-  },
-];
-
-const activeEvent = eventArray[1]
+const event = {
+  date : 'Oct 19, 2017 00:00:00',
+  title: 'Aikaa marathoniin',
+  expiredText: 'Bussi kulkee!',
+};
 
 const pad = num => {
   let s = num + "";
@@ -19,9 +10,9 @@ const pad = num => {
   return s;
 }
 
-const countDownDate = new Date(activeEvent.date).getTime();
+const countDownDate = new Date(event.date).getTime();
 
-const countTime = () => {
+export function initCountDown() {
   const now = new Date().getTime();
   const distance = countDownDate - now;
 
@@ -30,18 +21,11 @@ const countTime = () => {
   const minutes = pad(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
   const seconds = pad(Math.floor((distance % (1000 * 60)) / 1000));
 
-  document.getElementById("eventHeader").innerHTML = activeEvent.title;
+  document.getElementById("eventHeader").innerHTML = event.title;
   document.getElementById("eventTime").innerHTML = `<span>${days}</span> <span>${hours}</span> <span>${minutes}</span> <span>${seconds}</span>`;
 
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("eventTime").innerHTML = `<span>${activeEvent.expiredText}</span>`;
+    document.getElementById("eventTime").innerHTML = `<span>${event.expiredText}</span>`;
   }
 };
-
-const initMenus = () => {
-  countTime();
-  window.setInterval(() => {
-    countTime();
-  }, 1000);
-}

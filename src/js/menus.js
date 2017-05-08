@@ -1,25 +1,29 @@
+import moment from 'moment';
 import $ from 'jquery';
 
-const fetchMenus = () => {
+export function initMenus() {
   const amicaURL = 'http://www.amica.fi/modules/json/json/Index?costNumber=0199&language=fi';
-  $.getJSON(amicaURL, data => {
 
+  $.getJSON(amicaURL, data => {
     const table = data.MenusForDays[0].SetMenus;
     const resObject = {
       salaatti: null,
-      tuas: [],
+      // tuas: [],
     }
+
     table.forEach(row => {
       if (row.Name === 'SALAATTIBUFFET MM.') {
         resObject.salaatti = row.Components.join('<br>');
-      } else {
-        resObject.tuas.push(row.Components.join('<br>').concat('<br>'));
       }
+      // } else {
+      //   resObject.tuas.push(row.Components.join('<br>').concat('<br>'));
+      // }
     });
-    const tuas = ("<p>" + resObject.tuas.join('') + "</p>").replace(/\* ,/g, '').replace(/ ,/g, ', ');
+
+    // const tuas = ("<p>" + resObject.tuas.join('') + "</p>").replace(/\* ,/g, '').replace(/ ,/g, ', ');
     const salaatti = ("<p>" + resObject.salaatti + "</p>").replace(/\* ,/g, '').replace(/ ,/g, ', ');
 
-    $('#TUAS').html(tuas);
+    // $('#TUAS').html(tuas);
     $('#SALAATTI').html(salaatti);
   });
 
@@ -40,12 +44,4 @@ const fetchMenus = () => {
     $('#SODEXO').html(ttalo);
     $('#SUBWAY').html(subi);
   });
-};
-
-
-const initMenus = () => {
-  fetchMenus();
-  window.setInterval(() => {
-    fetchMenus();
-  }, 18000000);
 }
