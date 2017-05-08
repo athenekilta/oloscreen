@@ -4,7 +4,7 @@
   "description": "Infoscreen for the guild room of Athene. Contains bus lunch menu, events and picture of the day.",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/.bin/webpack -p --progress",
+    "start": "./node_modules/.bin/webpack --watch",
     "test": "echo \"No tests, don't wanna make && exit 1\""
   },
   "repository": {

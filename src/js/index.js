@@ -1,6 +1,8 @@
 import moment from 'moment';
 import $ from 'jquery';
 
+moment.locale('');
+
 $(document).ready(() => {
   let times = 0;
 
@@ -30,7 +32,6 @@ $(document).ready(() => {
   // Block functions start here
 
   function clock() {
-    moment.locale('');
     const date = moment().format('D.M.YYYY [klo] HH.mm.ss');
     document.getElementById('date').innerHTML = date;
   }
