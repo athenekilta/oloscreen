@@ -20,7 +20,8 @@ const pad = num => {
 }
 
 const countDownDate = new Date(activeEvent.date).getTime();
-const x = setInterval(() => {
+
+const countTime = () => {
   const now = new Date().getTime();
   const distance = countDownDate - now;
 
@@ -36,4 +37,11 @@ const x = setInterval(() => {
     clearInterval(x);
     document.getElementById("eventTime").innerHTML = `<span>${activeEvent.expiredText}</span>`;
   }
-}, 1000);
+};
+
+const initMenus = () => {
+  countTime();
+  window.setInterval(() => {
+    countTime();
+  }, 1000);
+}
