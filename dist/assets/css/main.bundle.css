@@ -182,6 +182,7 @@ body {
       margin: 0; }
     body main #eventTime span {
       background: #8BC34A;
+      color: #000;
       min-width: 1.5em;
       display: inline-block;
       text-align: center;
@@ -197,7 +198,8 @@ body {
         position: absolute;
         top: -45px;
         left: 0;
-        font-size: 28px; }
+        font-size: 28px;
+        color: #fff; }
       body main #eventTime span:nth-child(2):before {
         content: 'Tuntia'; }
       body main #eventTime span:nth-child(3):before {
