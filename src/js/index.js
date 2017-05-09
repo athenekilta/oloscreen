@@ -98,7 +98,7 @@ $(document).ready(() => {
       $('#subway').html(subi);
     });
 
-    const amicaURL = 'http://www.amica.fi/modules/json/json/Index?costNumber=0199&language=fi';
+    const amicaURL = 'https://www.amica.fi/modules/json/json/Index?costNumber=0199&language=fi';
 
     $.getJSON(amicaURL, data => {
       const table = data.MenusForDays[0].SetMenus;
