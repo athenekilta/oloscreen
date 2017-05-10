@@ -7,7 +7,8 @@
 
   <link href="assets/css/main.bundle.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet">
-
+  <script src="assets/js/format-google-calendar.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="assets/js/bundle.js"></script>
 </head>
 <body>
@@ -19,8 +20,25 @@
 
     <main>
       <div class="column" id="col1"></div>
-      <div class="column" id="col2"></div>
+      <div class="column" id="col2">
+        <ul id="events-upcoming"></ul>
+      </div>
     </main>
   </div>
+  <script>
+  formatGoogleCalendar.init({
+    calendarUrl: 'https://www.googleapis.com/calendar/v3/calendars/athenekilta@gmail.com/events?maxResults=2500&key=AIzaSyAGyZratKPXoYz2upWA9luCZ169-Is49ao',
+    past: true,
+    upcoming: true,
+    pastTopN: 2,
+    upcomingTopN: 3,
+    itemsTagName: 'li',
+    upcomingSelector: '#events-upcoming',
+    pastSelector: '#events-past',
+    upcomingHeading: '<h2>Tulevat tapahtumat</h2>',
+    pastHeading: '<h2>Past events</h2>',
+    format: [ '*summary*', ' &mdash; ', '*date*', '*description*', ' in ', '*location*']
+    });
+  </script>
 </body>
 </html>
