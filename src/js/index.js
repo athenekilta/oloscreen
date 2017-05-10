@@ -1,5 +1,6 @@
 import moment from 'moment';
 import $ from 'jquery';
+import formatGoogleCalendar from './format-google-calendar.js';
 
 moment.locale('');
 
@@ -9,16 +10,13 @@ $(document).ready(() => {
   window.setInterval(function() {
     // Run every second
     clock();
-    countDown()
+    countDown();
 
-    // Run every minute
-    // if (times % 60 === 0) {
-    //
-    // }
 
     // Run every three hours
-    if (times % 60 * 60 * 3 === 0) {
+    if ((times % (60 * 60 * 3)) === 0) {
       menus();
+      upcomingEvents();
     }
 
     times++;
@@ -36,6 +34,27 @@ $(document).ready(() => {
     document.getElementById('date').innerHTML = date;
   }
 
+  function upcomingEvents() {
+    $("#upcomingEventHeader").remove();
+    $("#upcomingEvents").empty();
+
+    if (!$('#upcomingEvents').length) {
+      $('#col2').append('<ul id="upcomingEvents"></ul>')
+    }
+    formatGoogleCalendar.init({
+      calendarUrl: 'https://www.googleapis.com/calendar/v3/calendars/athenekilta@gmail.com/events?maxResults=2500&key=AIzaSyAGyZratKPXoYz2upWA9luCZ169-Is49ao',
+      past: false,
+      upcoming: true,
+      pastTopN: 0,
+      upcomingTopN: 3,
+      itemsTagName: 'li',
+      upcomingSelector: '#upcomingEvents',
+      pastSelector: '#events-past',
+      upcomingHeading: '<h2 id="upcomingEventHeader">Tulevat tapahtumat</h2>',
+      pastHeading: '<h2>Past events</h2>',
+      format: [ '*summary*', ' &mdash; ', '*date*', '*description*', ' in ', '*location*']
+      });
+  }
 
   function countDown() {
     if (!$('#eventHeader').length) {

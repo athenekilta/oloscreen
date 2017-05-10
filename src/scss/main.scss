@@ -37,7 +37,17 @@ body {
     }
   }
 
+  #upcomingEvents {
+    margin-top: 0px;
+  }
+
+  /*.summary {
+    color: $brand;
+  }
+  */
+  
   #eventTime{
+    height: 190px;
     font-size: 90px;
     font-weight: 100;
   }

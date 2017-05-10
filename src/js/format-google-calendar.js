@@ -401,3 +401,5 @@ var formatGoogleCalendar = (function() {
         }
     };
 })();
+
+export default formatGoogleCalendar;

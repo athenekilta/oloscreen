@@ -140,7 +140,11 @@ body {
   width: 1920px;
   height: 1080px;
   padding: 10px 15px;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  /*.summary {
+    color: $brand;
+  }
+  */ }
   body #header {
     margin-top: 20px; }
     body #header #logo {
@@ -157,7 +161,10 @@ body {
     body #header #futurice {
       height: 100px;
       float: right; }
+  body #upcomingEvents {
+    margin-top: 0px; }
   body #eventTime {
+    height: 190px;
     font-size: 90px;
     font-weight: 100; }
   body main {
