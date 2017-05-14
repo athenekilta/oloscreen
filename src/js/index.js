@@ -17,7 +17,7 @@ $(document).ready(() => {
       menus();
       upcomingEvents();
     }
-    
+
     // Run every minutes
     if (times % 60 === 0) {
       weekend();
@@ -64,7 +64,7 @@ $(document).ready(() => {
     const today = new Date();
     if(today.getDay() == 6 || today.getDay() == 0) {
       const imageNumber = Math.floor((Math.random() * 25));
-      const partyHardSearch = 'http://api.giphy.com/v1/gifs/search?q=party+hard&api_key=dc6zaTOxFJmzC';
+      const partyHardSearch = 'https://api.giphy.com/v1/gifs/search?q=party+hard&api_key=dc6zaTOxFJmzC';
 
       $.getJSON(partyHardSearch, ({data}) => {
         const imageUrl = data[imageNumber].images.fixed_height.url;
