@@ -39,17 +39,44 @@ body {
 
   #upcomingEvents {
     margin-top: 0px;
+    list-style-type: none;
+    padding-left: 0;
+
+    li {
+      margin-bottom: 1em;
+    }
   }
 
-  /*.summary {
-    color: $brand;
+  .append #weekendPhoto {
+    width: 80vh;
+    max-height: 64vh;
+    float: left;
+    margin-top: 0.8em;
   }
-  */
-  
-  #eventTime{
-    height: 190px;
-    font-size: 90px;
-    font-weight: 100;
+
+  .date {
+    text-transform: uppercase;
+    font-size: 0.7em;
+    letter-spacing: 0.13em;
+    font-weight: 500;
+    margin-top: 0.4em;
+    margin-bottom: -55px;
+    display: block;
+  }
+
+  .summary {
+    font-size: 1.35em;
+  }
+
+  #giphy {
+    margin-top: 2.7em;
+    margin-left: 0.3em;
+  }
+
+  #col1wknd {
+    h2 {
+      float: left;
+    }
   }
 
   main {
@@ -83,13 +110,19 @@ body {
     }
 
     #eventTime {
-      span {
+      font-size: 90px;
+      font-weight: 100;
+      height: 165px;
+
+      div {
+        float: left;
         background: $brand;
         color: #000;
         min-width: 1.5em;
-        display: inline-block;
+        display: block;
         text-align: center;
         padding: 0 30px;
+        margin-right: 20px;
         box-sizing: border-box;
         font-family: 'Courier', monospace;
         position: relative;

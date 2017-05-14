@@ -12,11 +12,15 @@ $(document).ready(() => {
     clock();
     countDown();
 
-
     // Run every three hours
     if ((times % (60 * 60 * 3)) === 0) {
       menus();
       upcomingEvents();
+    }
+    
+    // Run every minutes
+    if (times % 60 === 0) {
+      weekend();
     }
 
     times++;
@@ -52,8 +56,25 @@ $(document).ready(() => {
       pastSelector: '#events-past',
       upcomingHeading: '<h2 id="upcomingEventHeader">Tulevat tapahtumat</h2>',
       pastHeading: '<h2>Past events</h2>',
-      format: [ '*summary*', ' &mdash; ', '*date*', '*description*', ' in ', '*location*']
+      format: [ '*date*',' <br/> ','*summary*']
       });
+  }
+
+  function weekend() {
+    const today = new Date();
+    if(today.getDay() == 6 || today.getDay() == 0) {
+      const imageNumber = Math.floor((Math.random() * 25));
+      const partyHardSearch = 'http://api.giphy.com/v1/gifs/search?q=party+hard&api_key=dc6zaTOxFJmzC';
+
+      $.getJSON(partyHardSearch, ({data}) => {
+        const imageUrl = data[imageNumber].images.fixed_height.url;
+        $('#col1').hide();
+        $('#col1wknd .append').html('<img src="' + imageUrl + '" alt="Party hard" id="weekendPhoto">');
+      })
+
+    } else {
+      $('#col1wknd').hide();
+    }
   }
 
   function countDown() {
@@ -74,7 +95,6 @@ $(document).ready(() => {
     }
 
     const countDownDate = new Date(event.date).getTime();
-
     const now = new Date().getTime();
     const distance = countDownDate - now;
 
@@ -83,12 +103,12 @@ $(document).ready(() => {
     const minutes = pad(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
     const seconds = pad(Math.floor((distance % (1000 * 60)) / 1000));
 
-    document.getElementById("eventHeader").innerHTML = event.title;
-    document.getElementById("eventTime").innerHTML = `<span>${days}</span> <span>${hours}</span> <span>${minutes}</span> <span>${seconds}</span>`;
+    document.getElementById('eventHeader').innerHTML = event.title;
+    document.getElementById('eventTime').innerHTML = `<div>${days}</div> <div>${hours}</div> <div>${minutes}</div> <div>${seconds}</div>`;
 
     if (distance < 0) {
       clearInterval(x);
-      document.getElementById("eventTime").innerHTML = `<span>${event.expiredText}</span>`;
+      document.getElementById('eventTime').innerHTML = `<span>${event.expiredText}</span>`;
     }
   }
 
@@ -123,22 +143,15 @@ $(document).ready(() => {
       const table = data.MenusForDays[0].SetMenus;
       const resObject = {
         salaatti: null,
-        // tuas: [],
       }
 
       table.forEach(row => {
         if (row.Name === 'SALAATTIBUFFET MM.') {
           resObject.salad = row.Components.join('<br>');
         }
-        // } else {
-        //   resObject.tuas.push(row.Components.join('<br>').concat('<br>'));
-        // }
       });
 
-      // const tuas = ("<p>" + resObject.tuas.join('') + "</p>").replace(/\* ,/g, '').replace(/ ,/g, ', ');
       const salad = ("<p>" + resObject.salad + "</p>").replace(/\* ,/g, '').replace(/ ,/g, ', ');
-
-      // $('#TUAS').html(tuas);
       $('#salad').html(salad);
     });
 

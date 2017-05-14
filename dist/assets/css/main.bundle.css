@@ -140,11 +140,7 @@ body {
   width: 1920px;
   height: 1080px;
   padding: 10px 15px;
-  box-sizing: border-box;
-  /*.summary {
-    color: $brand;
-  }
-  */ }
+  box-sizing: border-box; }
   body #header {
     margin-top: 20px; }
     body #header #logo {
@@ -162,11 +158,31 @@ body {
       height: 100px;
       float: right; }
   body #upcomingEvents {
-    margin-top: 0px; }
-  body #eventTime {
-    height: 190px;
-    font-size: 90px;
-    font-weight: 100; }
+    margin-top: 0px;
+    list-style-type: none;
+    padding-left: 0; }
+    body #upcomingEvents li {
+      margin-bottom: 1em; }
+  body .append #weekendPhoto {
+    width: 80vh;
+    max-height: 64vh;
+    float: left;
+    margin-top: 0.8em; }
+  body .date {
+    text-transform: uppercase;
+    font-size: 0.7em;
+    letter-spacing: 0.13em;
+    font-weight: 500;
+    margin-top: 0.4em;
+    margin-bottom: -55px;
+    display: block; }
+  body .summary {
+    font-size: 1.35em; }
+  body #giphy {
+    margin-top: 2.7em;
+    margin-left: 0.3em; }
+  body #col1wknd h2 {
+    float: left; }
   body main {
     clear: both;
     display: flex; }
@@ -187,29 +203,35 @@ body {
       text-transform: uppercase; }
     body main .block p {
       margin: 0; }
-    body main #eventTime span {
-      background: #8BC34A;
-      color: #000;
-      min-width: 1.5em;
-      display: inline-block;
-      text-align: center;
-      padding: 0 30px;
-      box-sizing: border-box;
-      font-family: 'Courier', monospace;
-      position: relative;
-      top: 50px; }
-      body main #eventTime span:before {
-        font-family: 'Open Sans';
-        content: 'P\E4iv\E4\E4';
-        text-transform: uppercase;
-        position: absolute;
-        top: -45px;
-        left: 0;
-        font-size: 28px;
-        color: #fff; }
-      body main #eventTime span:nth-child(2):before {
-        content: 'Tuntia'; }
-      body main #eventTime span:nth-child(3):before {
-        content: 'Minuuttia'; }
-      body main #eventTime span:nth-child(4):before {
-        content: 'Sekuntia'; }
+    body main #eventTime {
+      font-size: 90px;
+      font-weight: 100;
+      height: 165px; }
+      body main #eventTime div {
+        float: left;
+        background: #8BC34A;
+        color: #000;
+        min-width: 1.5em;
+        display: block;
+        text-align: center;
+        padding: 0 30px;
+        margin-right: 20px;
+        box-sizing: border-box;
+        font-family: 'Courier', monospace;
+        position: relative;
+        top: 50px; }
+        body main #eventTime div:before {
+          font-family: 'Open Sans';
+          content: 'P\E4iv\E4\E4';
+          text-transform: uppercase;
+          position: absolute;
+          top: -45px;
+          left: 0;
+          font-size: 28px;
+          color: #fff; }
+        body main #eventTime div:nth-child(2):before {
+          content: 'Tuntia'; }
+        body main #eventTime div:nth-child(3):before {
+          content: 'Minuuttia'; }
+        body main #eventTime div:nth-child(4):before {
+          content: 'Sekuntia'; }
