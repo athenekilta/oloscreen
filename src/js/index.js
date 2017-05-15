@@ -9,6 +9,7 @@ $(document).ready(() => {
 
   window.setInterval(function() {
     // Run every second
+
     clock();
     countDown();
 
@@ -20,7 +21,13 @@ $(document).ready(() => {
 
     // Run every minutes
     if (times % 60 === 0) {
-      weekend();
+      const date = new Date();
+      // apply weekend column (from friday 16:00 to sunday 00:00)
+      if ((date.getDay() === 5 && date.getHours() >= 16) || date.getDay() === 6 || date.getDay() === 0) {
+        weekend();
+      } else {
+        $('#col1wknd').hide();
+      }
     }
 
     times++;
@@ -33,12 +40,12 @@ $(document).ready(() => {
 
   // Block functions start here
 
-  function clock() {
+  const clock = () => {
     const date = moment().format('D.M.YYYY [klo] HH.mm.ss');
     document.getElementById('date').innerHTML = date;
   }
 
-  function upcomingEvents() {
+  const upcomingEvents = () => {
     $("#upcomingEventHeader").remove();
     $("#upcomingEvents").empty();
 
@@ -60,24 +67,18 @@ $(document).ready(() => {
       });
   }
 
-  function weekend() {
-    const today = new Date();
-    if(today.getDay() == 6 || today.getDay() == 0) {
-      const imageNumber = Math.floor((Math.random() * 25));
-      const partyHardSearch = 'https://api.giphy.com/v1/gifs/search?q=party+hard&api_key=dc6zaTOxFJmzC';
+  const weekend = () => {
+    const randomNumber = Math.floor((Math.random() * 25));
+    const partyHardSearch = 'https://api.giphy.com/v1/gifs/search?q=party+hard&api_key=dc6zaTOxFJmzC';
 
-      $.getJSON(partyHardSearch, ({data}) => {
-        const imageUrl = data[imageNumber].images.fixed_height.url;
-        $('#col1').hide();
-        $('#col1wknd .append').html('<img src="' + imageUrl + '" alt="Party hard" id="weekendPhoto">');
-      })
-
-    } else {
-      $('#col1wknd').hide();
-    }
+    $.getJSON(partyHardSearch, ({data}) => {
+      const imageUrl = data[randomNumber].images.fixed_height.url;
+      $('#col1').hide();
+      $('#col1wknd .append').html('<img src="' + imageUrl + '" alt="Party hard" id="weekendPhoto">');
+    })
   }
 
-  function countDown() {
+  const countDown = () => {
     if (!$('#eventHeader').length) {
       $('#col2').append('<h2 id="eventHeader"></h2><div id="eventTime"></div>');
     }
@@ -112,7 +113,7 @@ $(document).ready(() => {
     }
   }
 
-  function menus() {
+  const menus = () => {
     if (!$('#sodexo').length) {
       $('#col1').append('<h2>T-talo</h2><div class="block" id="sodexo"></div>');
       $('#col1').append('<h2>Subway</h2><div class="block" id="subway"></div>');
