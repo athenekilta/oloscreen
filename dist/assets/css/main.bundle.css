@@ -203,6 +203,8 @@ body {
       text-transform: uppercase; }
     body main .block p {
       margin: 0; }
+    body main #expiredText {
+      text-transform: uppercase; }
     body main #eventTime {
       font-size: 90px;
       font-weight: 100;
