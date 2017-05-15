@@ -6,7 +6,7 @@ const countDown = () => {
   }
   let blinking = false;
   const event = {
-    date: 'May 15, 2017 18:19:30',
+    date: 'Oct 19, 2017 00:00:00',
     title: 'Aikaa marathoniin',
     expiredText: 'Bussi kulkee!',
   };
