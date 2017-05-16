@@ -350,29 +350,14 @@ var formatGoogleCalendar = (function() {
 
     var getFormattedTime = function (date) {
         var formattedTime = '',
-            period = 'AM',
             hour = date[3],
             minute = date[4];
-
-        // Handle afternoon.
-        if (hour >= 12) {
-            period = 'PM';
-
-            if (hour >= 13) {
-                hour -= 12;
-            }
-        }
-
-        // Handle midnight.
-        if (hour === 0) {
-            hour = 12;
-        }
 
         // Ensure 2-digit minute value.
         minute = (minute < 10 ? '0' : '') + minute;
 
         // Format time.
-        formattedTime = hour + ':' + minute + period;
+        formattedTime = hour + '.' + minute;
         return formattedTime;
     };
 
