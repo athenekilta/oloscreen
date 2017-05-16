@@ -3,12 +3,13 @@ import $ from 'jquery';
 
 const menus = () => {
   if (!$('#sodexo').length) {
-    $('#col1').append('<h2>T-talo</h2><div class="block" id="sodexo"></div>');
+    $('#col1').append('<h2 id="ttaloHeader">T-talo</h2><div class="block" id="sodexo"></div>');
     $('#col1').append('<h2>Subway</h2><div class="block" id="subway"></div>');
-    $('#col1').append('<h2>TUAS Salaattibuffet</h2><div class="block" id="salad"></div>');
+    $('#col1').append('<h2 id="salaattiHeader">TUAS Salaattibuffet</h2><div class="block" id="salad"></div>');
+    $('#col1').append('<h2>Alvari</h2><div class="block" id="alvari"></div>');
   }
 
-  // Sodexo
+  // Sodexo T-talo
   const timestamp = moment().format('YYYY/MM/DD');
   const sodexoURL = `http://www.sodexo.fi/ruokalistat/output/daily_json/142/${timestamp}/fi`;
 
@@ -26,12 +27,13 @@ const menus = () => {
     $('#subway').html(subi);
   });
 
-  const amicaURL = 'https://www.amica.fi/modules/json/json/Index?costNumber=0199&language=fi';
+  // Amica Tuas-talo
+  const amicaTuas = 'https://www.amica.fi/modules/json/json/Index?costNumber=0199&language=fi';
 
-  $.getJSON(amicaURL, (data) => {
+  $.getJSON(amicaTuas, (data) => {
     const table = data.MenusForDays[0].SetMenus;
     const resObject = {
-      salaatti: null,
+      salad: null,
     };
 
     table.forEach((row) => {
@@ -45,4 +47,23 @@ const menus = () => {
   });
 };
 
-export default menus;
+// Amica Alvari
+const amicaAlvari = 'https://www.amica.fi/modules/json/json/Index?costNumber=0190&language=fi';
+
+const alvari = () => {
+  $.getJSON(amicaAlvari, (data) => {
+    const table = data.MenusForDays[0].SetMenus;
+    const fixedAlvar = table.map((a) => {
+      const values = a.Components ? `(${a.Components.join(', ')})` : '';
+      return `${values.slice(1, -1)}<br>`;
+    });
+    const alvarFood = (`<p>${fixedAlvar.join('')}</p>`).replace(/\* ,/g, '').replace(/ ,/g, ', ');
+    $('#alvari').html(alvarFood);
+  });
+  $('#ttaloHeader').hide();
+  $('#salaattiHeader').hide();
+  $('#salad').hide();
+  $('#sodexo').hide();
+};
+
+export { menus, alvari };

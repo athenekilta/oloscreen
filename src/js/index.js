@@ -3,7 +3,7 @@ import $ from 'jquery';
 import countDown from './countDown';
 import upcomingEvents from './upcomingEvents';
 import weekend from './weekend';
-import menus from './menus';
+import { menus, alvari } from './menus';
 
 moment.locale('');
 
@@ -30,11 +30,20 @@ $(document).ready(() => {
     if (times % 60 === 0) {
       const date = new Date();
       // apply weekend column (from friday 16:00 to sunday 00:00)
-      if ((date.getDay() === 5 && date.getHours() >= 16)
-        || date.getDay() === 6 || date.getDay() === 0) {
+      if ((((date.getDay() === 5)
+        && date.getHours() >= 16)
+        || date.getDay() === 6)
+        || date.getDay() === 0) {
         weekend();
       } else {
         $('#col1wknd').hide();
+      }
+      // show alvari
+      if ((date.getDay() > 0 && date.getDay() < 6)
+        && (date.getHours() >= 15 || (date.getHours() >= 14 && date.getMinutes >= 30))) {
+        alvari();
+      } else {
+        $('#alvari').hide();
       }
     }
 
