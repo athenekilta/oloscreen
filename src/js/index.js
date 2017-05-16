@@ -28,7 +28,7 @@ $(document).ready(() => {
 
     // Run every minutes
     if (times % 60 === 0) {
-      const date = new Date();
+      const date = new Date(2017,4,16,14,30);
       // apply weekend column (from friday 16:00 to sunday 00:00)
       if ((((date.getDay() === 5)
         && date.getHours() >= 16)
@@ -40,10 +40,11 @@ $(document).ready(() => {
       }
       // show alvari
       if ((date.getDay() > 0 && date.getDay() < 6)
-        && (date.getHours() >= 15 || (date.getHours() >= 14 && date.getMinutes >= 30))) {
+        && (date.getHours() >= 15 || (date.getHours() >= 14 && date.getMinutes() >= 30))) {
         alvari();
       } else {
         $('#alvari').hide();
+        $('#alvariHeader').hide();
       }
     }
 

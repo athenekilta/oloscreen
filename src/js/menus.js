@@ -6,7 +6,7 @@ const menus = () => {
     $('#col1').append('<h2 id="ttaloHeader">T-talo</h2><div class="block" id="sodexo"></div>');
     $('#col1').append('<h2>Subway</h2><div class="block" id="subway"></div>');
     $('#col1').append('<h2 id="salaattiHeader">TUAS Salaattibuffet</h2><div class="block" id="salad"></div>');
-    $('#col1').append('<h2>Alvari</h2><div class="block" id="alvari"></div>');
+    $('#col1').append('<h2 id="alvariHeader">Alvari</h2><div class="block" id="alvari"></div>');
   }
 
   // Sodexo T-talo
