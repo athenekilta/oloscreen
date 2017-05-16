@@ -6,10 +6,22 @@ const countDown = () => {
   }
   let blinking = false;
   const event = {
-    date: 'Oct 19, 2017 00:00:00',
+    date: '2017-10-19',
     title: 'Aikaa marathoniin',
     expiredText: 'Bussi kulkee!',
   };
+
+  /* Take date from calendar
+  const eventUrl = 'https://www.googleapis.com/calendar/v3/calendars/athenekilta@gmail.com/events?maxResults=2500&key=AIzaSyAGyZratKPXoYz2upWA9luCZ169-Is49ao';
+  $.getJSON(eventUrl, (data) => {
+    const table = data.items;
+    table.forEach((row) => {
+      if (row.summary === 'Marathon XIII') {
+        console.log(row.start.date);
+      }
+    });
+  });
+  */
 
   const pad = (num) => {
     let s = `${num}`;

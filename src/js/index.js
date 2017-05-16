@@ -28,7 +28,7 @@ $(document).ready(() => {
 
     // Run every minutes
     if (times % 60 === 0) {
-      const date = new Date(2017,4,16,14,30);
+      const date = new Date();
       // apply weekend column (from friday 16:00 to sunday 00:00)
       if ((((date.getDay() === 5)
         && date.getHours() >= 16)
