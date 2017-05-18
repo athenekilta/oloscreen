@@ -58,10 +58,6 @@ $(document).ready(() => {
       }
     }
 
-    // // Refresh page twice a day
-    if (times > 60 * 60 * 12) {
-      location.reload();
-    }
     times += 1;
   }, 1000);
 });
