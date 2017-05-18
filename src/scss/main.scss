@@ -39,6 +39,54 @@ body {
     }
   }
 
+  .namefield {
+    color: white;
+    font-size: 0.7em;
+  }
+
+  #pepu {
+    display: none;
+    .h2 {
+      display: none;
+    }
+  }
+
+  #pepuHeader {
+    padding-bottom: 0.6em;
+  }
+
+  #left {
+    width: 45vw;
+  }
+
+  #right {
+    width: 45vw;
+    height: 60vh;
+  }
+
+  #pepuResult {
+    height: 60vh;
+    margin-top: 4em;
+  }
+
+  .remove_field {
+    color: white;
+    font-size: 0.7em;
+  }
+
+  .input-field.col label {
+    color: white;
+    font-size: 0.7em;
+  }
+
+  .input_fields_wrap {
+    width: 50%;
+    overflow: scroll;
+    position: relative;
+    display: block;
+    height: 60vh;
+  }
+
   #upcomingEvents {
     margin-top: 0px;
     list-style-type: none;

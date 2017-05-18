@@ -4,6 +4,7 @@ import countDown from './countDown';
 import upcomingEvents from './upcomingEvents';
 import weekend from './weekend';
 import { menus, alvari } from './menus';
+import PepuScreen from './pepu';
 
 moment.locale('');
 
@@ -12,6 +13,9 @@ const clock = () => {
   document.getElementById('date').innerHTML = date;
 };
 
+let date = new Date(2017, 4, 19, 16);
+const pepuScreen = new PepuScreen();
+
 $(document).ready(() => {
   let times = 0;
 
@@ -19,40 +23,46 @@ $(document).ready(() => {
     // Run every second
     clock();
     countDown();
-
-    // Run every three hours
-    if ((times % (60 * 60 * 3)) === 0) {
-      menus();
-      upcomingEvents();
-    }
-
     // Run every minutes
-    if (times % 60 === 0) {
-      const date = new Date();
-      // apply weekend column (from friday 16:00 to sunday 00:00)
-      if ((((date.getDay() === 5)
-        && date.getHours() >= 16)
-        || date.getDay() === 6)
-        || date.getDay() === 0) {
-        weekend();
-      } else {
-        $('#col1wknd').hide();
-      }
-      // show alvari
-      if ((date.getDay() > 0 && date.getDay() < 6)
-        && (date.getHours() >= 15 || (date.getHours() >= 14 && date.getMinutes() >= 30))) {
-        alvari();
-      } else {
-        $('#alvari').hide();
-        $('#alvariHeader').hide();
-      }
-    }
+    if (times % 10 === 0) {
+      const day = date.getDay();         // Sunday = 0, Monday = 1
+      const hour = date.getHours();      // Values 0-23
+      const minute = date.getMinutes();  // Values 0-59
 
-    times += 1;
+      // get menus every day at 03:00 (not including saturday and sunday)
+      if (day > 0 && day < 6 && hour === 3 && minute === 0) {
+        menus();
+      }
+
+      // get upcoming events every day at 03:00
+      if (hour === 3 && minute === 0) {
+        upcomingEvents();
+      }
+
+      // apply weekend column on friday at 16:00 and get new picture every minute
+      if (!pepuScreen.pepuModeOn && ((day === 5 && hour >= 16) || day === 6 || day === 0)) {
+        weekend();
+      }
+
+      // show alvari from monday to friday after 14:30
+      if ((day > 0 && day < 6 && hour === 14 && minute === 30)) {
+        alvari();
+      }
+
+      // apply PEPU mode  on friday at 16:00
+      if (day === 5 && hour === 16 && minute === 0) {
+        pepuScreen.hideShow();
+      } else {
+        $('#hideNormal').remove();
+        $('#logo').show();
+      }
+      date = new Date(2017, 4, 19, 16);
+    }
 
     // // Refresh page twice a day
     if (times > 60 * 60 * 12) {
       location.reload();
     }
+    times += 1;
   }, 1000);
 });

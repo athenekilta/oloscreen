@@ -5,9 +5,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link href="assets/css/main.bundle.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+  <link href="assets/css/main.bundle.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
   <script src="assets/js/bundle.js"></script>
 </head>
 <body>
@@ -19,12 +21,19 @@
 
     <main>
       <div class="column" id="col1"></div>
-      <div class="column" id="col1wknd">
-        <h2>Weekend! Party hard!</h2>
-        <img src="assets/images/Giphy.png" id="giphy"></img>
-        <div class="append"></div>
-      </div>
+      <div class="column" id="col1wknd"></div>
       <div class="column" id="col2"></div>
+      <div class="row" id="pepu">
+        <div class="col" id="left">
+          <h2 id="pepuHeader">It is PEPU time</h2>
+          <button class="add_field_button">Lisää nimikenttiä</button>
+          <button id="arvo">Arvo PEPU</button>
+          <div class="row">
+            <div class="input_fields_wrap"></div>
+          </div>
+        </div>
+        <div class="col" id="right"></div>
+      </div>
     </main>
   </div>
 </body>

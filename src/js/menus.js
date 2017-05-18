@@ -45,6 +45,10 @@ const menus = () => {
     const salad = (`<p>${resObject.salad}</p>`).replace(/\* ,/g, '').replace(/ ,/g, ', ');
     $('#salad').html(salad);
   });
+  $('#col1').show();
+  $('#alvari').hide();
+  $('#alvariHeader').hide();
+  $('#col1wknd').hide();
 };
 
 // Amica Alvari
@@ -60,6 +64,8 @@ const alvari = () => {
     const alvarFood = (`<p>${fixedAlvar.join('')}</p>`).replace(/\* ,/g, '').replace(/ ,/g, ', ');
     $('#alvari').html(alvarFood);
   });
+  $('#alvari').show();
+  $('#alvariHeader').show();
   $('#ttaloHeader').hide();
   $('#salaattiHeader').hide();
   $('#salad').hide();

@@ -159,6 +159,35 @@ body {
       height: 100px;
       float: right;
       margin-right: 0.6em; }
+  body .namefield {
+    color: white;
+    font-size: 0.7em; }
+  body #pepu {
+    display: none; }
+    body #pepu .h2 {
+      display: none; }
+  body #pepuHeader {
+    padding-bottom: 0.6em; }
+  body #left {
+    width: 45vw; }
+  body #right {
+    width: 45vw;
+    height: 60vh; }
+  body #pepuResult {
+    height: 60vh;
+    margin-top: 4em; }
+  body .remove_field {
+    color: white;
+    font-size: 0.7em; }
+  body .input-field.col label {
+    color: white;
+    font-size: 0.7em; }
+  body .input_fields_wrap {
+    width: 50%;
+    overflow: scroll;
+    position: relative;
+    display: block;
+    height: 60vh; }
   body #upcomingEvents {
     margin-top: 0px;
     list-style-type: none;
