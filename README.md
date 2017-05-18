@@ -1,10 +1,14 @@
 # oloscreen
 
-Infoscreen for the guild room of Athene. Contains bus lunch menu, events and picture of the day.
-Install webpack-dev-server globally also webpack
+Infoscreen for the guild room of Athene. Contains lunch menus for school restaurants, three upcoming guild events,
+countdown for a big event and a few special features for weekends.
 
 ## Usage
-1. `npm install`
-2. `webpack`
-3. `webpack-dev-server`
-4. `Download Cors plugin to chrome`
+1. `npm install -g webpack`
+2. `npm install -g webpack-dev-server`
+3. `npm install`
+4. `webpack`
+5. `webpack --watch -d`
+6. `webpack-dev-server` (to different tab)
+7. `Download Cors plugin to chrome for seeing the menus`
+
