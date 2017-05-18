@@ -13,7 +13,7 @@ const clock = () => {
   document.getElementById('date').innerHTML = date;
 };
 
-let date = new Date(2017, 4, 19, 16);
+const date = new Date();
 const pepuScreen = new PepuScreen();
 
 $(document).ready(() => {
@@ -24,7 +24,7 @@ $(document).ready(() => {
     clock();
     countDown();
     // Run every minutes
-    if (times % 10 === 0) {
+    if (times % 60 === 0) {
       const day = date.getDay();         // Sunday = 0, Monday = 1
       const hour = date.getHours();      // Values 0-23
       const minute = date.getMinutes();  // Values 0-59
@@ -56,7 +56,6 @@ $(document).ready(() => {
         $('#hideNormal').remove();
         $('#logo').show();
       }
-      date = new Date(2017, 4, 19, 16);
     }
 
     // // Refresh page twice a day
