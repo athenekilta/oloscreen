@@ -28,7 +28,7 @@ $(document).ready(() => {
       const day = date.getDay();         // Sunday = 0, Monday = 1
       const hour = date.getHours();      // Values 0-23
       const minute = date.getMinutes();  // Values 0-59
-
+      console.log(`day: ${day} minute: ${hour} day: ${minute}`);
       // get menus every day at 03:00 (not including saturday and sunday)
       if ((day > 0 && day < 6 && hour === 3 && minute === 0)
          || (day === 5 && hour === 10 && minute === 25)) {
