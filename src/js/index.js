@@ -35,12 +35,12 @@ $(document).ready(() => {
 
       // get menus every day at 03:00 (not including saturday and sunday)
       if ((day > 0 && day < 6 && hour === 3 && minute === 0)
-         || (day === 5 && hour === 11 && minute === 5)) {
+         || (day === 5 && hour === 11 && minute === 20)) {
         menus();
       }
 
       // get upcoming events every day at 03:00
-      if ((hour === 3 && minute === 0) || (day === 5 && hour === 11 && minute === 5)) {
+      if ((hour === 3 && minute === 0) || (day === 5 && hour === 11 && minute === 20)) {
         upcomingEvents();
       }
 
@@ -57,7 +57,10 @@ $(document).ready(() => {
       // apply PEPU mode  on friday at 16:00
       if (day === 5 && hour === 16 && minute === 0) {
         pepuScreen.hideShow();
-      } else {
+      }
+
+      // disable PEPU mode
+      if (day === 6) {
         $('#hideNormal').remove();
         $('#logo').show();
       }
