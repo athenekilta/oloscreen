@@ -18,6 +18,9 @@ const pepuScreen = new PepuScreen();
 
 $(document).ready(() => {
   let times = 0;
+  let day = date.getDay();         // Sunday = 0, Monday = 1
+  let hour = date.getHours();      // Values 0-23
+  let minute = date.getMinutes();  // Values 0-59
 
   window.setInterval(() => {
     // Run every second
@@ -25,20 +28,19 @@ $(document).ready(() => {
     countDown();
     // Run every minutes
     if (times % 60 === 0) {
-      date = new Date();
-      const day = date.getDay();         // Sunday = 0, Monday = 1
-      const hour = date.getHours();      // Values 0-23
-      const minute = date.getMinutes();  // Values 0-59
+      day = date.getDay();         // Sunday = 0, Monday = 1
+      hour = date.getHours();      // Values 0-23
+      minute = date.getMinutes();  // Values 0-59
       console.log(`day: ${day} hour: ${hour} minute: ${minute}`);
       // get menus every day at 03:00 (not including saturday and sunday)
       if ((day > 0 && day < 6 && hour === 3 && minute === 0)
-         || (day === 5 && hour === 10 && minute === 35)) {
+         || (day === 5 && hour === 10 && minute === 41)) {
         console.log('menee menuuun');
         menus();
       }
 
       // get upcoming events every day at 03:00
-      if ((hour === 3 && minute === 0) || (day === 5 && hour === 10 && minute === 35)) {
+      if ((hour === 3 && minute === 0) || (day === 5 && hour === 10 && minute === 41)) {
         upcomingEvents();
       }
 
@@ -64,6 +66,7 @@ $(document).ready(() => {
       if (hour === 0 && minute === 0) {
         location.reload();
       }
+      date = new Date();
     }
 
     times += 1;
