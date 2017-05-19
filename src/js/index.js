@@ -26,21 +26,21 @@ $(document).ready(() => {
     // Run every second
     clock();
     countDown();
+
     // Run every minutes
-    if (times % 30 === 0) {
+    if (times % 60 === 0) {
       day = date.getDay();         // Sunday = 0, Monday = 1
       hour = date.getHours();      // Values 0-23
       minute = date.getMinutes();  // Values 0-59
-      console.log(`day: ${day} hour: ${hour} minute: ${minute}`);
+
       // get menus every day at 03:00 (not including saturday and sunday)
       if ((day > 0 && day < 6 && hour === 3 && minute === 0)
-         || (day === 5 && hour === 10 && minute === 52)) {
-        console.log('menee menuuun');
+         || (day === 5 && hour === 10 && minute === 59)) {
         menus();
       }
 
       // get upcoming events every day at 03:00
-      if ((hour === 3 && minute === 0) || (day === 5 && hour === 10 && minute === 52)) {
+      if ((hour === 3 && minute === 0) || (day === 5 && hour === 10 && minute === 59)) {
         upcomingEvents();
       }
 
