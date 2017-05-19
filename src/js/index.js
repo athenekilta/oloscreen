@@ -35,12 +35,12 @@ $(document).ready(() => {
 
       // get menus every day at 03:00 (not including saturday and sunday)
       if ((day > 0 && day < 6 && hour === 3 && minute === 0)
-         || (day === 5 && hour === 10 && minute === 59)) {
+         || (day === 5 && hour === 11 && minute === 5)) {
         menus();
       }
 
       // get upcoming events every day at 03:00
-      if ((hour === 3 && minute === 0) || (day === 5 && hour === 10 && minute === 59)) {
+      if ((hour === 3 && minute === 0) || (day === 5 && hour === 11 && minute === 5)) {
         upcomingEvents();
       }
 
