@@ -34,13 +34,13 @@ $(document).ready(() => {
       console.log(`day: ${day} hour: ${hour} minute: ${minute}`);
       // get menus every day at 03:00 (not including saturday and sunday)
       if ((day > 0 && day < 6 && hour === 3 && minute === 0)
-         || (day === 5 && hour === 10 && minute === 47)) {
+         || (day === 5 && hour === 10 && minute === 52)) {
         console.log('menee menuuun');
         menus();
       }
 
       // get upcoming events every day at 03:00
-      if ((hour === 3 && minute === 0) || (day === 5 && hour === 10 && minute === 47)) {
+      if ((hour === 3 && minute === 0) || (day === 5 && hour === 10 && minute === 52)) {
         upcomingEvents();
       }
 
