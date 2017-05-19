@@ -30,12 +30,13 @@ $(document).ready(() => {
       const minute = date.getMinutes();  // Values 0-59
 
       // get menus every day at 03:00 (not including saturday and sunday)
-      if (day > 0 && day < 6 && hour === 3 && minute === 0) {
+      if ((day > 0 && day < 6 && hour === 3 && minute === 0)
+         || (day === 5 && hour === 10 && minute === 25)) {
         menus();
       }
 
       // get upcoming events every day at 03:00
-      if (hour === 3 && minute === 0) {
+      if ((hour === 3 && minute === 0) || (day === 5 && hour === 10 && minute === 25)) {
         upcomingEvents();
       }
 
@@ -55,6 +56,11 @@ $(document).ready(() => {
       } else {
         $('#hideNormal').remove();
         $('#logo').show();
+      }
+
+      // reload page at 00:00
+      if (hour === 0 && minute === 0) {
+        location.reload();
       }
     }
 
