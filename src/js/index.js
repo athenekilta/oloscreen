@@ -14,13 +14,20 @@ const clock = () => {
 };
 
 let date = new Date();
+let day = date.getDay(); // Sunday = 0, Monday = 1
+let hour = date.getHours(); // Values 0-23
+let minute = date.getMinutes(); // Values 0-59
 const pepuScreen = new PepuScreen();
+let times = 1;
+const screenState = localStorage.getItem('state') || 'noState';
 
 $(document).ready(() => {
-  let times = 0;
-  let day = date.getDay();         // Sunday = 0, Monday = 1
-  let hour = date.getHours();      // Values 0-23
-  let minute = date.getMinutes();  // Values 0-59
+  // make right function call when page is reloaded
+  if (screenState === 'menu') menus();
+  else if (screenState === 'weekend') weekend();
+  upcomingEvents();
+
+  console.log(`state: ${screenState}`);
 
   window.setInterval(() => {
     // Run every second
@@ -29,29 +36,31 @@ $(document).ready(() => {
 
     // Run every minutes
     if (times % 60 === 0) {
-      day = date.getDay();         // Sunday = 0, Monday = 1
-      hour = date.getHours();      // Values 0-23
-      minute = date.getMinutes();  // Values 0-59
-
-      // get menus every day at 03:00 (not including saturday and sunday)
-      if ((day > 0 && day < 6 && hour === 3 && minute === 0)
-         || (day === 5 && hour === 11 && minute === 20)) {
-        menus();
-      }
+      day = date.getDay(); // Sunday = 0, Monday = 1
+      hour = date.getHours(); // Values 0-23
+      minute = date.getMinutes(); // Values 0-59
 
       // get upcoming events every day at 03:00
-      if ((hour === 3 && minute === 0) || (day === 5 && hour === 11 && minute === 20)) {
+      if (hour === 3 && minute === 0) {
         upcomingEvents();
+      }
+
+      // get menus every day at 03:00 (not including saturday and sunday)
+      if (day > 0 && day < 6 && hour === 4 && minute === 0) {
+        menus();
+        localStorage.setItem('state', 'menu');
       }
 
       // apply weekend column on friday at 16:00 and get new picture every minute
       if (!pepuScreen.pepuModeOn && ((day === 5 && hour >= 16) || day === 6 || day === 0)) {
         weekend();
+        localStorage.setItem('state', 'weekend');
       }
 
       // show alvari from monday to friday after 14:30
-      if ((day > 0 && day < 6 && hour === 14 && minute === 30)) {
+      if (day > 0 && day < 6 && hour === 14 && minute === 30) {
         alvari();
+        localStorage.setItem('state', 'alvari');
       }
 
       // apply PEPU mode  on friday at 16:00
