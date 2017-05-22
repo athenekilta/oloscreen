@@ -70,6 +70,7 @@ const alvari = () => {
   $('#salaattiHeader').hide();
   $('#salad').hide();
   $('#sodexo').hide();
+  $('col1wknd').hide();
 };
 
 export { menus, alvari };

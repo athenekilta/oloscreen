@@ -3,7 +3,10 @@ import $ from 'jquery';
 import countDown from './countDown';
 import upcomingEvents from './upcomingEvents';
 import weekend from './weekend';
-import { menus, alvari } from './menus';
+import {
+  menus,
+  alvari,
+} from './menus';
 import PepuScreen from './pepu';
 
 moment.locale('');
@@ -23,9 +26,13 @@ const screenState = localStorage.getItem('state') || 'noState';
 
 $(document).ready(() => {
   // make right function call when page is reloaded
+  upcomingEvents();
   if (screenState === 'menu') menus();
   else if (screenState === 'weekend') weekend();
-  upcomingEvents();
+  else if (screenState === 'alvari') {
+    menus();
+    alvari();
+  }
 
   console.log(`state: ${screenState}`);
 
@@ -35,7 +42,7 @@ $(document).ready(() => {
     countDown();
 
     // Run every minutes
-    if (times % 60 === 0) {
+    if (times % 10 === 0) {
       day = date.getDay(); // Sunday = 0, Monday = 1
       hour = date.getHours(); // Values 0-23
       minute = date.getMinutes(); // Values 0-59
@@ -78,9 +85,8 @@ $(document).ready(() => {
       if (hour === 0 && minute === 0) {
         location.reload();
       }
-      date = new Date();
     }
-
+    date = new Date();
     times += 1;
   }, 1000);
 });

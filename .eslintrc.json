@@ -7,5 +7,8 @@
         "document": true,
         "window": true,
         "location": true   
+    },
+    "env": {
+        "browser": true
     }
 }
