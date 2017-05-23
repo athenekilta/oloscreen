@@ -13,21 +13,22 @@ const clock = () => {
   document.getElementById('date').innerHTML = date;
 };
 
-let date = new Date(2017, 4, 19, 14, 30);
+let date = new Date();
 let day = date.getDay(); // Sunday = 0, Monday = 1
 let hour = date.getHours(); // Values 0-23
 let minute = date.getMinutes(); // Values 0-59
 const pepuScreen = new PepuScreen();
 let times = 1;
 const screenState = localStorage.getItem('state') || 'noState';
+localStorage.setItem('state', 'alvari');
 
 $(document).ready(() => {
   // make right function call when page is reloaded
   upcomingEvents();
   menus();
-  // if (screenState === 'menu') menus();
-  // else if (screenState === 'weekend') weekend();
-  // else if (screenState === 'alvari') alvari();
+  if (screenState === 'menu') menus();
+  else if (screenState === 'weekend') weekend();
+  else if (screenState === 'alvari') alvari();
 
   console.log(`state: ${screenState}`);
 
