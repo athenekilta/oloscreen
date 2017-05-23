@@ -13,7 +13,7 @@ const clock = () => {
   document.getElementById('date').innerHTML = date;
 };
 
-let date = new Date();
+let date = new Date(2017, 4, 19, 14, 30);
 let day = date.getDay(); // Sunday = 0, Monday = 1
 let hour = date.getHours(); // Values 0-23
 let minute = date.getMinutes(); // Values 0-59
