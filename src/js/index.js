@@ -19,7 +19,6 @@ let hour = date.getHours(); // Values 0-23
 let minute = date.getMinutes(); // Values 0-59
 const pepuScreen = new PepuScreen();
 let times = 1;
-localStorage.setItem('state', 'alvari');
 const screenState = localStorage.getItem('state') || 'noState';
 
 $(document).ready(() => {
@@ -29,8 +28,6 @@ $(document).ready(() => {
   if (screenState === 'weekend') weekend();
   else if (screenState === 'alvari') alvari();
 
-  console.log(`state: ${screenState}`);
-
   window.setInterval(() => {
     // Run every second
     clock();
@@ -38,7 +35,6 @@ $(document).ready(() => {
 
     // Run every minutes
     if (times % 60 === 0) {
-      console.log(`day: ${day} hour: ${hour} minute: ${minute}`);
       day = date.getDay(); // Sunday = 0, Monday = 1
       hour = date.getHours(); // Values 0-23
       minute = date.getMinutes(); // Values 0-59
