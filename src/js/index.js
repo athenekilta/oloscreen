@@ -25,9 +25,9 @@ $(document).ready(() => {
   // make right function call when page is reloaded
   upcomingEvents();
   menus();
-  if (screenState === 'menu') menus();
-  else if (screenState === 'weekend') weekend();
-  else if (screenState === 'alvari') alvari();
+  // if (screenState === 'menu') menus();
+  // else if (screenState === 'weekend') weekend();
+  // else if (screenState === 'alvari') alvari();
 
   console.log(`state: ${screenState}`);
 
@@ -37,7 +37,7 @@ $(document).ready(() => {
     countDown();
 
     // Run every minutes
-    if (times % 10 === 0) {
+    if (times % 60 === 0) {
       console.log(`day: ${day} hour: ${hour} minute: ${minute}`);
       day = date.getDay(); // Sunday = 0, Monday = 1
       hour = date.getHours(); // Values 0-23
