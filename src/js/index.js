@@ -19,15 +19,14 @@ let hour = date.getHours(); // Values 0-23
 let minute = date.getMinutes(); // Values 0-59
 const pepuScreen = new PepuScreen();
 let times = 1;
-const screenState = localStorage.getItem('state') || 'noState';
 localStorage.setItem('state', 'alvari');
+const screenState = localStorage.getItem('state') || 'noState';
 
 $(document).ready(() => {
   // make right function call when page is reloaded
   upcomingEvents();
   menus();
-  if (screenState === 'menu') menus();
-  else if (screenState === 'weekend') weekend();
+  if (screenState === 'weekend') weekend();
   else if (screenState === 'alvari') alvari();
 
   console.log(`state: ${screenState}`);
