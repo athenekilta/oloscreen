@@ -58,6 +58,10 @@ const menus = () => {
     $('#salad').html(salad);
   });
   $('#col1').show();
+  $('#ttaloHeader').show();
+  $('#salaattiHeader').show();
+  $('#sodexo').show();
+  $('#salad').show();
   $('#alvari').hide();
   $('#alvariHeader').hide();
   $('#col1wknd').hide();
