@@ -205,7 +205,7 @@ var formatGoogleCalendar = (function() {
 
     var getDayName = function (day) {
       var dayNames = [
-          'Sunnutai', 'Maanantai', 'Tiistai', 'Keskiviikko', 'Torstai', 'Perjantai', 'Lauantai'
+          'Sunnuntai', 'Maanantai', 'Tiistai', 'Keskiviikko', 'Torstai', 'Perjantai', 'Lauantai'
       ];
 
       return dayNames[day];
@@ -266,7 +266,7 @@ var formatGoogleCalendar = (function() {
       //month day, year
       return dayName + getMonthName(dateStart[1]) + dateStart[0] + ', ' + dateStart[2];
     };
-    /*
+
     var formatDateDifferentDay = function(dateStart, dateEnd, dayNames) {
       var dayNameStart = '',
           dayNameEnd = '';
@@ -302,7 +302,7 @@ var formatGoogleCalendar = (function() {
         //month day, year - month day, year
         return dayNameStart + getMonthName(dateStart[1]) + ' ' + dateStart[0] + ', ' + dateStart[2] + '-' + dayNameEnd + getMonthName(dateEnd[1]) + ' ' + dateEnd[0] + ', ' + dateEnd[2];
     };
-    */
+
     //Check differences between dates and format them
     var getFormattedDate = function(dateStart, dateEnd, moreDaysEvent, isAllDayEvent, dayNames) {
         var formattedDate = '';
