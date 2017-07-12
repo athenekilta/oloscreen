@@ -6,9 +6,9 @@ const countDown = () => {
   }
   let blinking = false;
   const event = {
-    date: '2017-10-19',
-    title: 'Aikaa marathoniin',
-    expiredText: 'Bussi kulkee!',
+    date: 'September 1, 2017 18:00',
+    title: 'Aikaa Varaslähtöön',
+    expiredText: 'Phuksit on täällä!',
   };
 
   /* Take date from calendar

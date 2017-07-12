@@ -15,19 +15,30 @@ const menus = () => {
     );
   }
 
-  // Sodexo T-talo
+  // Sodexo T-talo + Subway
+  const subwayDailySpecial = {
+    0: 'Kinkku',
+    1: 'Kana Fajita',
+    2: 'Tonnikala',
+    3: 'Kananrinta',
+    4: 'Italian B.M.T',
+    5: 'Vegepihvi',
+    6: 'American Steakhouse Melt',
+  };
+
   const timestamp = moment().format('YYYY/MM/DD');
-  const sodexoURL = `http://www.sodexo.fi/ruokalistat/output/daily_json/142/${timestamp}/fi`;
+  const sodexoURL = `https://kitchen.kanttiinit.fi/restaurants/2/menu?day=${timestamp}/`;
 
   $.getJSON(sodexoURL, (data) => {
-    const table = data.courses;
+    const table = data.menus[0].courses;
     const fixedSodexo = table.map((a) => {
       const values = a.properties ? `(${a.properties})` : '';
-      return `${a.title_fi} ${values}<br>`;
+      return `${a.title} ${values}<br>`;
     });
     fixedSodexo.splice(-1, 1); // delete subway
 
-    const subi = `<p> ${table[table.length - 1].title_fi}</p>`.replace(
+    const dayOfTheWeek = moment().day();
+    const subi = `<p> ${subwayDailySpecial[dayOfTheWeek]}</p>`.replace(
       'Subway',
       'Päivän subi',
     );
@@ -36,6 +47,7 @@ const menus = () => {
     $('#subway').html(subi);
   });
 
+/*
   // Amica Tuas-talo
   const amicaTuas =
     'https://www.amica.fi/modules/json/json/Index?costNumber=0199&language=fi';
@@ -57,9 +69,10 @@ const menus = () => {
       .replace(/ ,/g, ', ');
     $('#salad').html(salad);
   });
+  */
   $('#col1').show();
   $('#ttaloHeader').show();
-  $('#salaattiHeader').show();
+  $('#salaattiHeader').hide(); // TODO: show this after 4.8.
   $('#sodexo').show();
   $('#salad').show();
   $('#alvari').hide();
