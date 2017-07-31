@@ -120,7 +120,7 @@ var formatGoogleCalendar = (function() {
       //if start date is midnight and the end date a following day midnight as well
       if ((dateStartFormatted.getTime() === dateEndFormatted.getTime() - 86400000) &&
           dateStartFormatted.getMinutes() === 0 &&
-          dateStartFormatted.getHours() === 0) {
+          dateStartFormatted.getHours() === 3) {
         return true;
       }
 
@@ -141,6 +141,7 @@ var formatGoogleCalendar = (function() {
 
         if (isAllDayEvent) {
           dateEnd = subtractOneMinute(dateEnd);
+          dateStart = subtractOneDay(dateStart);
         }
 
         var dateFormatted = getFormattedDate(dateStart, dateEnd, moreDaysEvent, isAllDayEvent, dayNames),
@@ -172,7 +173,6 @@ var formatGoogleCalendar = (function() {
                 }
             }
         }
-
         return output + '</' + tagName + '>';
     };
 
@@ -236,7 +236,7 @@ var formatGoogleCalendar = (function() {
     //Subtract one minute
     var subtractOneMinute = function (dateInfo) {
       var date = getDateFormatted(dateInfo);
-      date.setTime(date.getTime() - 60000);
+      date.setTime(date.getTime() - 10800600);
       return getDateInfo(date);
     };
 
@@ -278,7 +278,7 @@ var formatGoogleCalendar = (function() {
         //month day-day, year
         return dayNameStart + getMonthName(dateStart[1]) + ' ' + dateStart[0] + '-' + dayNameEnd + dateEnd[0] + ', ' + dateStart[2];
     };
-    
+
     var formatDateDifferentMonth = function(dateStart, dateEnd, dayNames) {
       var dayNameStart = '',
           dayNameEnd = '';
@@ -290,7 +290,7 @@ var formatGoogleCalendar = (function() {
         //month day - month day, year
         return dayNameStart + getMonthName(dateStart[1]) + ' ' + dateStart[0] + '-' + dayNameEnd + getMonthName(dateEnd[1]) + ' ' + dateEnd[0] + ', ' + dateStart[2];
     };
-    
+
     var formatDateDifferentYear = function(dateStart, dateEnd, dayNames) {
       var dayNameStart = '',
           dayNameEnd = '';
