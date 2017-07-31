@@ -140,7 +140,7 @@ var formatGoogleCalendar = (function() {
         }
 
         if (isAllDayEvent) {
-          dateEnd = subtractOneMinute(dateEnd);
+          dateEnd = subtractThreeHoursAndASecond(dateEnd);
           dateStart = subtractOneDay(dateStart);
         }
 
@@ -235,6 +235,13 @@ var formatGoogleCalendar = (function() {
 
     //Subtract one minute
     var subtractOneMinute = function (dateInfo) {
+      var date = getDateFormatted(dateInfo);
+      date.setTime(date.getTime() - 60000);
+      return getDateInfo(date);
+    };
+
+    //Subtract three hours and a minute
+    var subtractThreeHoursAndASecond = function (dateInfo) {
       var date = getDateFormatted(dateInfo);
       date.setTime(date.getTime() - 10800600);
       return getDateInfo(date);
