@@ -117,6 +117,7 @@ var formatGoogleCalendar = (function() {
       var dateStartFormatted = getDateFormatted(dateStart),
           dateEndFormatted = getDateFormatted(dateEnd);
 
+      console.log("alkuaika: " + dateStartFormatted + "\n loppuaika: " + dateEndFormatted);
       //if start date is midnight and the end date a following day midnight as well
       if ((dateStartFormatted.getTime() === dateEndFormatted.getTime() - 86400000) &&
           dateStartFormatted.getMinutes() === 0 &&
@@ -136,7 +137,7 @@ var formatGoogleCalendar = (function() {
             isAllDayEvent = isAllDay(dateStart, dateEnd);
 
         if (moreDaysEvent) {
-          dateStart = addOneDay(dateStart);
+          dateEnd = subtractThreeHoursAndASecond(dateEnd);
         }
 
         if (isAllDayEvent) {
@@ -211,8 +212,20 @@ var formatGoogleCalendar = (function() {
       return dayNames[day];
     };
 
+    var getShorterDayName = function (day) {
+      var dayNames = [
+          'Su', 'Ma', 'Ti', 'Ke', 'To', 'Pe', 'La'
+      ];
+
+      return dayNames[day];
+    };
+
     var getDayNameFormatted = function (dateFormatted) {
       return getDayName(getDateFormatted(dateFormatted).getDay()) + ' ';
+    };
+
+    var getShorterDayNameFormatted = function (dateFormatted) {
+      return getShorterDayName(getDateFormatted(dateFormatted).getDay());
     };
 
     var getDateFormatted = function (dateInfo) {
@@ -278,12 +291,16 @@ var formatGoogleCalendar = (function() {
       var dayNameStart = '',
           dayNameEnd = '';
 
+          console.log("Minä toteudun");
+
+
       if (dayNames) {
         dayNameStart = getDayNameFormatted(dateStart);
         dayNameEnd = getDayNameFormatted(dateEnd);
       }
         //month day-day, year
-        return dayNameStart + getMonthName(dateStart[1]) + ' ' + dateStart[0] + '-' + dayNameEnd + dateEnd[0] + ', ' + dateStart[2];
+        //Perjantai 4. - lauantai 5.8.2017
+        return dayNameStart  + ' ' + dateStart[0] + '. - ' + dayNameEnd + dateEnd[0] + '.' + getMonthName(dateStart[1]) + dateStart[2];
     };
 
     var formatDateDifferentMonth = function(dateStart, dateEnd, dayNames) {
