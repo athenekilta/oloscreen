@@ -141,8 +141,11 @@ var formatGoogleCalendar = (function() {
         }
 
         if (isAllDayEvent) {
+          console.log("!!!!!alkuaika: " + dateStart);
+          console.log("!!!!!loppuaika: " + dateEnd);
           dateEnd = subtractThreeHoursAndASecond(dateEnd);
-          dateStart = subtractOneDay(dateStart);
+          console.log("alkuaika: " + dateStart);
+          console.log("loppuaika: " + dateEnd);
         }
 
         var dateFormatted = getFormattedDate(dateStart, dateEnd, moreDaysEvent, isAllDayEvent, dayNames),
