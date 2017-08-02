@@ -120,7 +120,7 @@ var formatGoogleCalendar = (function() {
       //if start date is midnight and the end date a following day midnight as well
       if ((dateStartFormatted.getTime() === dateEndFormatted.getTime() - 86400000) &&
           dateStartFormatted.getMinutes() === 0 &&
-          dateStartFormatted.getHours() === 0) {
+          dateStartFormatted.getHours() === 3) {
         return true;
       }
 
@@ -140,7 +140,8 @@ var formatGoogleCalendar = (function() {
         }
 
         if (isAllDayEvent) {
-          dateEnd = subtractOneMinute(dateEnd);
+          dateEnd = subtractThreeHoursAndASecond(dateEnd);
+          dateStart = subtractOneDay(dateStart);
         }
 
         var dateFormatted = getFormattedDate(dateStart, dateEnd, moreDaysEvent, isAllDayEvent, dayNames),
@@ -172,7 +173,6 @@ var formatGoogleCalendar = (function() {
                 }
             }
         }
-
         return output + '</' + tagName + '>';
     };
 
@@ -240,6 +240,13 @@ var formatGoogleCalendar = (function() {
       return getDateInfo(date);
     };
 
+    //Subtract three hours and a minute
+    var subtractThreeHoursAndASecond = function (dateInfo) {
+      var date = getDateFormatted(dateInfo);
+      date.setTime(date.getTime() - 10800600);
+      return getDateInfo(date);
+    };
+
     //Transformations for formatting date into human readable format
     var formatDateSameDay = function(dateStart, dateEnd, moreDaysEvent, isAllDayEvent, dayNames) {
         var formattedTime = '',
@@ -278,7 +285,7 @@ var formatGoogleCalendar = (function() {
         //month day-day, year
         return dayNameStart + getMonthName(dateStart[1]) + ' ' + dateStart[0] + '-' + dayNameEnd + dateEnd[0] + ', ' + dateStart[2];
     };
-    
+
     var formatDateDifferentMonth = function(dateStart, dateEnd, dayNames) {
       var dayNameStart = '',
           dayNameEnd = '';
@@ -290,7 +297,7 @@ var formatGoogleCalendar = (function() {
         //month day - month day, year
         return dayNameStart + getMonthName(dateStart[1]) + ' ' + dateStart[0] + '-' + dayNameEnd + getMonthName(dateEnd[1]) + ' ' + dateEnd[0] + ', ' + dateStart[2];
     };
-    
+
     var formatDateDifferentYear = function(dateStart, dateEnd, dayNames) {
       var dayNameStart = '',
           dayNameEnd = '';
