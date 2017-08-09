@@ -142,7 +142,6 @@ var formatGoogleCalendar = (function() {
 
         if (isAllDayEvent) {
           dateEnd = subtractThreeHoursAndASecond(dateEnd);
-          dateStart = subtractOneDay(dateStart);
         }
 
         var dateFormatted = getFormattedDate(dateStart, dateEnd, moreDaysEvent, isAllDayEvent, dayNames),
