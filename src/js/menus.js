@@ -47,7 +47,6 @@ const menus = () => {
     $('#subway').html(subi);
   });
 
-/*
   // Amica Tuas-talo
   const amicaTuas =
     'https://www.amica.fi/modules/json/json/Index?costNumber=0199&language=fi';
@@ -69,10 +68,10 @@ const menus = () => {
       .replace(/ ,/g, ', ');
     $('#salad').html(salad);
   });
-  */
+
   $('#col1').show();
   $('#ttaloHeader').show();
-  $('#salaattiHeader').hide(); // TODO: show this after 4.8.
+  $('#salaattiHeader').show();
   $('#sodexo').show();
   $('#salad').show();
   $('#alvari').hide();
