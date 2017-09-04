@@ -7,7 +7,7 @@ const countDown = () => {
   let blinking = false;
   const event = {
     date: 'September 5, 2017 23:59',
-    title: 'DSD-hakuaikaa',
+    title: 'DSD-ilmoaikaa',
     description: 'Futurice.com/DSD',
     expiredText: 'DSD-hakuaika loppunut!',
   };
