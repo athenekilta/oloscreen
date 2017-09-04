@@ -283,7 +283,7 @@ body {
     body main #expiredText {
       text-transform: uppercase; }
     body main #timerDescription {
-      margin: 0 0 20px 0; }
+      margin: 0 0 10px 0; }
     body main #eventTime {
       font-size: 90px;
       font-weight: 100;
