@@ -6,9 +6,9 @@ const countDown = () => {
   }
   let blinking = false;
   const event = {
-    date: 'September 1, 2017 18:00',
-    title: 'Aikaa Varaslähtöön',
-    expiredText: 'Phuksit on täällä!',
+    date: 'September 4, 2017 23:59',
+    title: 'DSD-hakuaikaa',
+    expiredText: 'DSD-hakuaika loppunut!',
   };
 
   /* Take date from calendar
