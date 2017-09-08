@@ -2,14 +2,13 @@ import $ from 'jquery';
 
 const countDown = () => {
   if (!$('#eventHeader').length) {
-    $('#col2').append('<h2 id="eventHeader"></h2><div id="timerDescription"></div><div id="eventTime"></div>');
+    $('#col2').append('<h2 id="eventHeader"></h2><div id="eventTime"></div>');
   }
   let blinking = false;
   const event = {
-    date: 'September 5, 2017 23:59',
-    title: 'DSD-ilmoaikaa',
-    description: 'Futurice.com/DSD',
-    expiredText: 'DSD-hakuaika loppunut!',
+    date: 'September 15, 2017 18:00',
+    title: 'Phuksisitsit',
+    expiredText: 'Phuksisitsit LET`S GO!',
   };
 
   /* Take date from calendar
@@ -40,7 +39,6 @@ const countDown = () => {
   const seconds = pad(Math.floor((distance % (1000 * 60)) / 1000));
 
   document.getElementById('eventHeader').innerHTML = event.title;
-  document.getElementById('timerDescription').innerHTML = `<p id="timerDescription">${event.description}</p>`;
   document.getElementById('eventTime').innerHTML = `<div>${days}</div> <div>${hours}</div> <div>${minutes}</div> <div>${seconds}</div>`;
 
   const eventTimeElement = document.getElementById('eventTime');
