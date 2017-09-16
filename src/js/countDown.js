@@ -6,9 +6,9 @@ const countDown = () => {
   }
   let blinking = false;
   const event = {
-    date: 'September 15, 2017 18:00',
-    title: 'Phuksisitsit',
-    expiredText: 'Phuksisitsit LET`S GO!',
+    date: 'October 1, 2017 00:00',
+    title: 'Lakinlaskijaiset',
+    expiredText: 'Drop the cap!',
   };
 
   /* Take date from calendar
