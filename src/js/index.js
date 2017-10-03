@@ -18,7 +18,6 @@ let day = date.getDay(); // Sunday = 0, Monday = 1
 let hour = date.getHours(); // Values 0-23
 let minute = date.getMinutes(); // Values 0-59
 const pepuScreen = new PepuScreen();
-let times = 1;
 const screenState = localStorage.getItem('state') || 'noState';
 
 $(document).ready(() => {
@@ -32,12 +31,16 @@ $(document).ready(() => {
     // Run every second
     clock();
     countDown();
-
+    console.log(times);
     // Run every minutes
+    console.log(times % 60);
     if (times % 60 === 0) {
+      console.log('jaa');
       day = date.getDay(); // Sunday = 0, Monday = 1
       hour = date.getHours(); // Values 0-23
       minute = date.getMinutes(); // Values 0-59
+      console.log('päivä');
+      console.log(day);
 
       // get upcoming events every day at 04:00
       if (hour === 4 && minute === 0) {
