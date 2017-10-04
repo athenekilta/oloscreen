@@ -32,13 +32,11 @@ $(document).ready(() => {
     // Run every second
     clock();
     countDown();
-
     // Run every minutes
     if (times % 60 === 0) {
       day = date.getDay(); // Sunday = 0, Monday = 1
       hour = date.getHours(); // Values 0-23
       minute = date.getMinutes(); // Values 0-59
-
       // get upcoming events every day at 04:00
       if (hour === 4 && minute === 0) {
         upcomingEvents();
