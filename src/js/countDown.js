@@ -6,9 +6,9 @@ const countDown = () => {
   }
   let blinking = false;
   const event = {
-    date: 'October 30, 2017 16:15',
-    title: 'Vaalit',
-    expiredText: 'Vaaliwoop!',
+    date: 'November 17, 2017 16:00',
+    title: 'Infoähky',
+    expiredText: 'Vujut, jee!',
   };
 
   /* Take date from calendar
