@@ -6,8 +6,8 @@ const countDown = () => {
   }
   let blinking = false;
   const event = {
-    date: 'December 12, 2017 18:00',
-    title: 'Abisitsit',
+    date: 'December 17, 2017 18:30',
+    title: 'AA-kerhon vujut',
     expiredText: 'pls contact support',
   };
 
