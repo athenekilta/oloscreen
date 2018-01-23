@@ -6,9 +6,9 @@ const countDown = () => {
   }
   let blinking = false;
   const event = {
-    date: 'January 12, 2018 17:00',
-    title: 'Killanvaihto',
-    expiredText: 'pls contact support',
+    date: 'January 25, 2018 11:00',
+    title: 'Rekrymessut',
+    expiredText: '',
   };
 
   /* Take date from calendar
