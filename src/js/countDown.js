@@ -6,9 +6,9 @@ const countDown = () => {
   }
   let blinking = false;
   const event = {
-    date: 'March 2, 2018 18:30',
-    title: 'Väärinymmärretyt',
-    expiredText: 'Tietskarijengi tehkää jotain',
+    date: 'March 6, 2018 18:00',
+    title: 'OESWC 2018 - Olkkari E-Sports World Championship',
+    expiredText: '',
   };
 
   /* Take date from calendar
