@@ -6,9 +6,9 @@ const countDown = () => {
   }
   let blinking = false;
   const event = {
-    date: 'March 23, 2018 18:00',
-    title: 'Sukulaissitsit / Family sitsit',
-    expiredText: '',
+    date: 'May 1, 2018 00:00',
+    title: 'WAPPU',
+    expiredText: 'OMG WAPPUWAPPUWAPPU',
   };
 
   /* Take date from calendar
