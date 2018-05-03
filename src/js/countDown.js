@@ -7,8 +7,8 @@ const countDown = () => {
   let blinking = false;
   const event = {
     date: 'August 31, 2018 19:00',
-    title: 'Varaslähtö',
-    expiredText: 'OMG WAPPUWAPPUWAPPU',
+    title: 'Himmailua jäljellä',
+    expiredText: 'Alkaa pikkuhiljaa vituttaa tää himmailu',
   };
 
   /* Take date from calendar
