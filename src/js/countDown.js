@@ -6,9 +6,9 @@ const countDown = () => {
   }
   let blinking = false;
   const event = {
-    date: 'August 31, 2018 19:00',
-    title: 'Himmailua jäljellä',
-    expiredText: 'Alkaa pikkuhiljaa vituttaa tää himmailu',
+    date: 'May 27, 2018 13:00',
+    title: 'Kevätkauden päättäjäiset',
+    expiredText: 'Kiitos keväästä! Killan kesäpäivät 21.7.',
   };
 
   /* Take date from calendar
