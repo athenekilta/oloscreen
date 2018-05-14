@@ -6,9 +6,9 @@ const countDown = () => {
   }
   let blinking = false;
   const event = {
-    date: 'March 2, 2018 18:30',
-    title: 'Väärinymmärretyt',
-    expiredText: 'Tietskarijengi tehkää jotain',
+    date: 'May 27, 2018 13:00',
+    title: 'Kevätkauden päättäjäiset',
+    expiredText: 'Kiitos keväästä! Kesäpäivät ovat 21.7.',
   };
 
   /* Take date from calendar
