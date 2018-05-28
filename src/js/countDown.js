@@ -6,9 +6,9 @@ const countDown = () => {
   }
   let blinking = false;
   const event = {
-    date: 'May 27, 2018 13:00',
-    title: 'Kevätkauden päättäjäiset',
-    expiredText: 'Kiitos keväästä! Killan kesäpäivät 21.7.',
+    date: 'July 21, 2018 13:00',
+    title: 'Killan kesäpäivät',
+    expiredText: 'Kesä on nyt päivätty.',
   };
 
   /* Take date from calendar
