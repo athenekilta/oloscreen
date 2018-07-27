@@ -1,8 +1,12 @@
 import $ from 'jquery';
 
+// if pekkapouta == true, display funny picture
+
+let pekkapouta = true;
+
 const countDown = () => {
   if (!$('#eventHeader').length) {
-    $('#col2').append('<h2 id="eventHeader"></h2><div id="eventTime"></div>');
+    $('#col2').append('<div id="pouta"></div><div id="countdown"><h2 id="eventHeader"></h2><div id="eventTime"></div></div>');
   }
   let blinking = false;
   const event = {
@@ -46,11 +50,17 @@ const countDown = () => {
     eventTimeElement.style.visibility = (eventTimeElement.style.visibility === 'hidden' ? '' : 'hidden');
   };
 
-  if (distance <= 0 && !blinking) {
+
+
+  if (pekkapouta){
+    $('#pouta').html('<img src="https://i.imgur.com/yD0uxXb.png" />')
+    $('#countdown').hide()
+  } else if (distance <= 0 && !blinking) {
     blink();
     blinking = true;
     eventTimeElement.innerHTML = `<span id="expiredText">${event.expiredText}</span>`;
   }
+
 };
 
 export default countDown;
