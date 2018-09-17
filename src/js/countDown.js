@@ -2,7 +2,7 @@ import $ from 'jquery';
 
 // if pekkapouta == true, display funny picture
 
-let pekkapouta = true;
+let pekkapouta = false;
 
 const countDown = () => {
   if (!$('#eventHeader').length) {
@@ -10,9 +10,9 @@ const countDown = () => {
   }
   let blinking = false;
   const event = {
-    date: 'July 21, 2018 13:00',
-    title: 'Killan kesäpäivät',
-    expiredText: 'Kesä on nyt päivätty.',
+    date: 'September 27, 2018 18:30',
+    title: 'Haalarisitsit',
+    expiredText: 'Onnea uusista haalareista!',
   };
 
   /* Take date from calendar
