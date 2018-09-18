@@ -17,13 +17,13 @@ const menus = () => {
 
   // Sodexo T-talo + Subway
   const subwayDailySpecial = {
-    0: 'Kinkku',
-    1: 'Kana Fajita',
-    2: 'Tonnikala',
-    3: 'Kananrinta',
-    4: 'Italian B.M.T',
-    5: 'Vegepihvi',
-    6: 'American Steakhouse Melt',
+    0: 'American Steakhouse Melt',
+    1: 'Spicy Italian',
+    2: 'Kananrinta',
+    3: 'Italian B.M.T',
+    4: 'Kalkkuna',
+    5: 'Vegan Delite',
+    6: 'Kinkku',
   };
 
   const timestamp = moment().format('YYYY/MM/DD');
