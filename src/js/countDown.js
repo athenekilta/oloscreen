@@ -10,9 +10,9 @@ const countDown = () => {
   }
   let blinking = false;
   const event = {
-    date: 'October 18, 2018 8:00',
-    title: 'Marathon',
-    expiredText: 'Bussi kulkee!',
+    date: 'November 16, 2018 16:00',
+    title: 'Infoähky',
+    expiredText: 'Nyt juhlitaan!',
   };
 
   /* Take date from calendar
