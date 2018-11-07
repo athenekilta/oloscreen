@@ -6,6 +6,7 @@
   "scripts": {
     "start": "./node_modules/.bin/webpack --watch",
     "build": "./node_modules/.bin/webpack",
+    "dev": "./node_modules/.bin/webpack-dev-server",
     "test": "echo \"No tests, don't wanna make && exit 1\""
   },
   "repository": {
