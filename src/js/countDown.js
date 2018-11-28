@@ -10,9 +10,9 @@ const countDown = () => {
   }
   let blinking = false;
   const event = {
-    date: 'November 16, 2018 16:00',
-    title: 'Infoähky',
-    expiredText: 'Nyt juhlitaan!',
+    date: 'December 31, 2018 20:00',
+    title: 'Athene 20-v. uudenvuodenbileet',
+    expiredText: 'Hyvää uutta vuotta!',
   };
 
   /* Take date from calendar
