@@ -1,18 +1,20 @@
-import $ from 'jquery';
+import $ from "jquery";
 
 // if pekkapouta == true, display funny picture
 
 let pekkapouta = false;
 
 const countDown = () => {
-  if (!$('#eventHeader').length) {
-    $('#col2').append('<div id="pouta"></div><div id="countdown"><h2 id="eventHeader"></h2><div id="eventTime"></div></div>');
+  if (!$("#eventHeader").length) {
+    $("#col2").append(
+      '<div id="pouta"></div><div id="countdown"><h2 id="eventHeader"></h2><div id="eventTime"></div></div>'
+    );
   }
   let blinking = false;
   const event = {
-    date: 'December 31, 2018 20:00',
-    title: 'Athene 20-v. uudenvuodenbileet',
-    expiredText: 'Hyvää uutta vuotta!',
+    date: "February 7, 2019 12:00",
+    title: "Pikkulaskiainen",
+    expiredText: "Hauskoja laskuja!"
   };
 
   /* Take date from calendar
@@ -27,9 +29,11 @@ const countDown = () => {
   });
   */
 
-  const pad = (num) => {
+  const pad = num => {
     let s = `${num}`;
-    while (s.length < 2) { s = `0${s}`; }
+    while (s.length < 2) {
+      s = `0${s}`;
+    }
     return s;
   };
 
@@ -38,29 +42,33 @@ const countDown = () => {
   const distance = countDownDate - now;
 
   const days = pad(Math.floor(distance / (1000 * 60 * 60 * 24)));
-  const hours = pad(Math.floor(((distance % (1000 * 60 * 60 * 24))) / (1000 * 60 * 60)));
+  const hours = pad(
+    Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+  );
   const minutes = pad(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
   const seconds = pad(Math.floor((distance % (1000 * 60)) / 1000));
 
-  document.getElementById('eventHeader').innerHTML = event.title;
-  document.getElementById('eventTime').innerHTML = `<div>${days}</div> <div>${hours}</div> <div>${minutes}</div> <div>${seconds}</div>`;
+  document.getElementById("eventHeader").innerHTML = event.title;
+  document.getElementById(
+    "eventTime"
+  ).innerHTML = `<div>${days}</div> <div>${hours}</div> <div>${minutes}</div> <div>${seconds}</div>`;
 
-  const eventTimeElement = document.getElementById('eventTime');
+  const eventTimeElement = document.getElementById("eventTime");
   const blink = () => {
-    eventTimeElement.style.visibility = (eventTimeElement.style.visibility === 'hidden' ? '' : 'hidden');
+    eventTimeElement.style.visibility =
+      eventTimeElement.style.visibility === "hidden" ? "" : "hidden";
   };
 
-
-
-  if (pekkapouta){
-    $('#pouta').html('<img src="https://i.imgur.com/yD0uxXb.png" />')
-    $('#countdown').hide()
+  if (pekkapouta) {
+    $("#pouta").html('<img src="https://i.imgur.com/yD0uxXb.png" />');
+    $("#countdown").hide();
   } else if (distance <= 0 && !blinking) {
     blink();
     blinking = true;
-    eventTimeElement.innerHTML = `<span id="expiredText">${event.expiredText}</span>`;
+    eventTimeElement.innerHTML = `<span id="expiredText">${
+      event.expiredText
+    }</span>`;
   }
-
 };
 
 export default countDown;
