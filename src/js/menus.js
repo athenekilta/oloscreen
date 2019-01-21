@@ -49,7 +49,7 @@ const menus = () => {
 
   // Amica Tuas-talo
   const amicaTuas =
-    "https://www.fazerfoodco.fi/modules/json/json/Index?costNumber=0199&language=en";
+    "https://www.fazerfoodco.fi/modules/json/json/Index?costNumber=0199&language=fi";
 
   $.getJSON(amicaTuas, data => {
     const table = data.MenusForDays[0].SetMenus;
@@ -58,7 +58,7 @@ const menus = () => {
     };
 
     table.forEach(row => {
-      if (row.Name === "SALAATTIBUFFET MM.") {
+      if (row.Name === "Fresh Bufee") {
         resObject.salad = row.Components.join("<br>");
       }
     });
