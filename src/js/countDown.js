@@ -12,9 +12,9 @@ const countDown = () => {
   }
   let blinking = false;
   const event = {
-    date: "February 7, 2019 12:00",
-    title: "Pikkulaskiainen",
-    expiredText: "Hauskoja laskuja!"
+    date: "March 1, 2019 18:30",
+    title: "Kaverisitsit",
+    expiredText: "Party time!"
   };
 
   /* Take date from calendar
