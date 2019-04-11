@@ -1,20 +1,20 @@
-import $ from 'jquery';
+import $ from "jquery";
 
 // if pekkapouta == true, display funny picture
 
 let pekkapouta = false;
 
 const countDown = () => {
-  if (!$('#eventHeader').length) {
-    $('#col2').append(
+  if (!$("#eventHeader").length) {
+    $("#col2").append(
       '<div id="pouta"></div><div id="countdown"><h2 id="eventHeader"></h2><div id="eventTime"></div></div>'
     );
   }
   let blinking = false;
   const event = {
-    date: 'March 22, 2019 09:00',
-    title: 'InfoXX-seminaari',
-    expiredText: 'Nauttikaa seminaarista!'
+    date: "May 1, 2019 00:00",
+    title: "Wappu!",
+    expiredText: "Hauskaa Wappua!"
   };
 
   /* Take date from calendar
@@ -48,20 +48,20 @@ const countDown = () => {
   const minutes = pad(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
   const seconds = pad(Math.floor((distance % (1000 * 60)) / 1000));
 
-  document.getElementById('eventHeader').innerHTML = event.title;
+  document.getElementById("eventHeader").innerHTML = event.title;
   document.getElementById(
-    'eventTime'
+    "eventTime"
   ).innerHTML = `<div>${days}</div> <div>${hours}</div> <div>${minutes}</div> <div>${seconds}</div>`;
 
-  const eventTimeElement = document.getElementById('eventTime');
+  const eventTimeElement = document.getElementById("eventTime");
   const blink = () => {
     eventTimeElement.style.visibility =
-      eventTimeElement.style.visibility === 'hidden' ? '' : 'hidden';
+      eventTimeElement.style.visibility === "hidden" ? "" : "hidden";
   };
 
   if (pekkapouta) {
-    $('#pouta').html('<img src="https://i.imgur.com/yD0uxXb.png" />');
-    $('#countdown').hide();
+    $("#pouta").html('<img src="https://i.imgur.com/yD0uxXb.png" />');
+    $("#countdown").hide();
   } else if (distance <= 0 && !blinking) {
     blink();
     blinking = true;
