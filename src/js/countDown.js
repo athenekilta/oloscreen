@@ -12,7 +12,7 @@ const countDown = () => {
   }
   let blinking = false;
   const event = {
-    date: "May 1, 2019 00:00",
+    date: "August 17, 2019 14:00",
     title: "Wappu!",
     expiredText: "Hauskaa Wappua!"
   };
