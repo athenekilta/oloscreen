@@ -13,8 +13,8 @@ const countDown = () => {
   let blinking = false;
   const event = {
     date: "August 17, 2019 14:00",
-    title: "Wappu!",
-    expiredText: "Hauskaa Wappua!"
+    title: "TASSUfest!",
+    expiredText: "Bilettäkää hyvin!"
   };
 
   /* Take date from calendar
